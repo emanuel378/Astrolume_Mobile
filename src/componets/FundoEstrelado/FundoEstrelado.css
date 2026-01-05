@@ -1,0 +1,119 @@
+.fundo-estrelado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #1b0b3a, #050014);
+}
+
+/* Base para todas as camadas de estrelas */
+.estrelas-camada {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: 1000px 1000px;
+}
+
+/* Estrelas pequenas (mais numerosas, fundo) */
+.estrelas-pequenas {
+  background-image: 
+    radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 30% 40%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 40% 50%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 50% 60%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 70% 80%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 80% 90%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 90% 10%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 15% 35%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 25% 45%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 35% 55%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 45% 65%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 55% 75%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 65% 85%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 75% 95%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 85% 5%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 95% 15%, rgba(255, 255, 255, 0.8), transparent);
+  animation: moverEstrelas 200s linear infinite;
+}
+
+/* Estrelas médias */
+.estrelas-medias {
+  background-image: 
+    radial-gradient(1.5px 1.5px at 5% 15%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 15% 25%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 25% 35%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 35% 45%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 45% 55%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 55% 65%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 65% 75%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 75% 85%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 85% 95%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 95% 5%, rgba(255, 255, 255, 0.9), transparent);
+  animation: moverEstrelas 150s linear infinite reverse;
+}
+
+/* Estrelas grandes (mais brilhantes) */
+.estrelas-grandes {
+  background-image: 
+    radial-gradient(2px 2px at 8% 12%, rgba(255, 255, 255, 1), transparent),
+    radial-gradient(2px 2px at 18% 22%, rgba(255, 255, 255, 1), transparent),
+    radial-gradient(2px 2px at 28% 32%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 38% 42%, rgba(255, 255, 255, 1), transparent),
+    radial-gradient(2px 2px at 48% 52%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 58% 62%, rgba(255, 255, 255, 1), transparent),
+    radial-gradient(2px 2px at 68% 72%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 78% 82%, rgba(255, 255, 255, 1), transparent),
+    radial-gradient(2px 2px at 88% 92%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 98% 2%, rgba(255, 255, 255, 1), transparent);
+  animation: moverEstrelas 100s linear infinite;
+}
+
+/* Estrelas cintilantes (com animação de brilho) */
+.estrelas-cintilantes {
+  background-image: 
+    radial-gradient(1.2px 1.2px at 12% 18%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.2px 1.2px at 22% 28%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.2px 1.2px at 32% 38%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1.2px 1.2px at 42% 48%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.2px 1.2px at 52% 58%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1.2px 1.2px at 62% 68%, rgba(255, 255, 255, 0.7), transparent);
+  animation: cintilar 4s ease-in-out infinite alternate;
+}
+
+/* Animações */
+@keyframes moverEstrelas {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-1000px) translateX(500px);
+  }
+}
+
+@keyframes cintilar {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Para dispositivos móveis - reduzir animação */
+@media (max-width: 768px) {
+  .estrelas-camada {
+    animation-duration: 300s !important;
+  }
+  
+  .estrelas-cintilantes {
+    animation-duration: 6s !important;
+  }
+}
