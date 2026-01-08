@@ -1,0 +1,164 @@
+/* CONTAINER PRINCIPAL */
+.galaxias-container {
+  min-height: 100vh;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+/* CARD PRINCIPAL */
+.galaxia-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 1.8rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  box-shadow:
+    0 0 30px rgba(0, 191, 255, 0.15),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+/* HEADER */
+.galaxia-header {
+  margin-bottom: 1.2rem;
+}
+
+.galaxia-titulo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.galaxia-nome {
+  font-family: 'Gugi', cursive;
+  font-size: 2.8rem;
+  color: #00D4FF;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px rgba(0, 191, 255, 0.6),
+    0 0 25px rgba(0, 191, 255, 0.4);
+}
+
+/* PLANETA */
+.galaxia-visual {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.planeta {
+  width: 210px;
+  max-width: 100%;
+  animation: flutuar 4s ease-in-out infinite;
+}
+
+/* ANIMAÇÃO */
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ÍCONES */
+.galaxia-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.galaxia-icons img {
+  width: 64px;
+  height: 64px;
+  padding: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  object-fit: contain;
+}
+
+
+/* HOVER DOS ÍCONES (PREPARADO PARA TROCA) */
+.galaxia-icons img:hover {
+  transform: scale(1.2) rotate(3deg);
+  filter: drop-shadow(0 0 15px rgba(0, 191, 255, 0.9));
+}
+
+/* BOTÃO */
+.btn-escolher {
+  margin-top: 1.2rem;
+  padding: 14px 38px;
+  font-family: 'Gugi', cursive;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #0066CC 0%, #00BFFF 100%);
+  box-shadow:
+    0 8px 25px rgba(0, 102, 204, 0.5),
+    0 0 15px rgba(0, 191, 255, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  transition: all 0.3s ease;
+}
+
+.btn-escolher:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 35px rgba(0, 102, 204, 0.7),
+    0 0 25px rgba(0, 191, 255, 1);
+}
+
+/* CARD INFERIOR */
+.galaxia-info {
+  width: 100%;
+  max-width: 380px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 191, 255, 0.25);
+  text-align: center;
+}
+
+.galaxia-info h3 {
+  font-family: 'Gugi', cursive;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.galaxia-info h3 span {
+  color: #00D4FF;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+}
+
+.galaxia-info p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 0.6rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+  .planeta {
+    width: 180px;
+  }
+
+  .galaxia-icons img {
+    width: 56px;
+  }
+
+  .galaxia-nome {
+    font-size: 2.3rem;
+  }
+}

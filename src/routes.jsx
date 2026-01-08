@@ -2,6 +2,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Login from "./pages/Login/Login"; 
 import Cadastro from "./pages/Cadastro/Cadastro";
 import Inicial from "./pages/TelaInicial/Inicial";
+import Galaxias from "./pages/Galaxia/galaxias";
 
 export default function RoutesApp(){
     return(
@@ -11,6 +12,8 @@ export default function RoutesApp(){
         <Route path="/" element={<Inicial/>}/>
         <Route path="/cadastro" element={<Cadastro/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/galaxias" element={<Galaxias/>}/>
+
         
 
 
