@@ -15,16 +15,18 @@ export default function Cadastro() {
     async function handleCadastro(e) {
         e.preventDefault();
         setLoading(true);
+        try {
+           const api = import.meta.env.VITE_API_URL;
 
-       try {
-        const response = await axios.post(
-            'https://astrolume-backend.onrender.com/auth/register',
-            {
-                nome: usuario,
-                email: email,
-                senha: senha
-             }
+            const response = await axios.post(
+                `${api}/auth/register`,
+                {
+                    nome: usuario,
+                    email,
+                    senha
+                }
             );
+
 
             console.log('Cadastro OK:', response.data);
             alert('Cadastro realizado com sucesso!');
