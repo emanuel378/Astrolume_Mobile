@@ -1,5 +1,5 @@
 import React from 'react';
-import './Galaxias.css';
+import './GalaxiaSaude.css';
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
 import { Link } from 'react-router-dom';
 
@@ -12,51 +12,48 @@ import terra3 from '../../assets/terra3.png';
 // import logo from '../assets/logo.png'; // só se for usar
 
 
-export default function Galaxias() {
+export default function GalaxiaSaude() {
   return (
     <>
       <FundoEstrelado />
 
-      <div className="galaxias-container">
+      <div className="galaxias-container galaxias-saude">
 
-        {/* CARD PRINCIPAL */}
         <div className="galaxia-card">
 
-          {/* TÍTULO */}
           <div className="galaxia-header">
             <h2 className="galaxia-titulo">Galáxia</h2>
-            <h2 className="galaxia-nome">Techtron</h2>
+            <h2 className="galaxia-nome">Vita</h2>
             <div className="linha"></div>
           </div>
 
-          {/* PLANETA + ASTRONAUTA */}
           <div className="galaxia-visual">
-            <img src={orionTerra1} alt="Planeta" className="planeta" />
-            
+            <img src={terra2} alt="Planeta" className="planeta" />
           </div>
 
-          {/* ÍCONES */}
           <div className="galaxia-icons">
-            <img src={orionTerra1} alt="Ícone 1" />
-           <Link to="/galaxiasaude"> <img src={terra2} alt="Ícone 2" /></Link>
-            <img src={terra3} alt="Ícone 3" />
+            <Link to="/galaxias">
+              <img src={orionTerra1} alt="Ícone Tech" />
+            </Link>
+            <img src={terra2} alt="Ícone Saúde" />
+          <Link to="/galaxieconomica">
+                       <img src={terra3} alt="Ícone Tech" />
+                     </Link>
           </div>
 
-          {/* BOTÃO */}
           <button className="btn-escolher">
             Escolher
           </button>
 
         </div>
 
-        {/* CARD INFERIOR */}
         <div className="galaxia-info">
           <h3>
-            O Futuro nas <span>Suas Mãos</span>
+            Cuidando <span>da vida</span>
           </h3>
           <p>
-            Para quem sonha com <strong>tecnologia e IA</strong>, onde cada planeta
-            simboliza uma habilidade-chave para o <strong>futuro</strong>.
+            <strong>Saúde</strong> e <strong>bem-estar</strong>, com mundos que vão dos
+            segredos do <strong>corpo humano</strong> aos avanços da <strong>biotecnologia</strong>.
           </p>
         </div>
 

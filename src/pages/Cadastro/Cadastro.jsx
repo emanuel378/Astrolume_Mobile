@@ -1,5 +1,5 @@
 // Cadastro.jsx
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // ← Adicione useNavigate
 import { useState } from 'react';
 import axios from 'axios';
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
@@ -10,6 +10,7 @@ export default function Cadastro() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate(); // ← Crie a instância do navigate
 
     async function handleCadastro(e) {
         e.preventDefault();
@@ -17,7 +18,7 @@ export default function Cadastro() {
 
         try {
             const response = await axios.post(
-                'http://localhost:3333/auth/register', // ⚠️ porta do backend
+                'http://localhost:3333/auth/register',
                 {
                     nome: usuario,
                     email: email,
@@ -27,6 +28,10 @@ export default function Cadastro() {
 
             console.log('Cadastro OK:', response.data);
             alert('Cadastro realizado com sucesso!');
+            
+            // 🔥 REDIRECIONA PARA A TELA DE GALÁXIAS
+            navigate('/galaxias'); // ← Aqui está o redirecionamento
+            
         } catch (error) {
             console.error(error.response?.data || error);
             alert('Erro ao cadastrar');
