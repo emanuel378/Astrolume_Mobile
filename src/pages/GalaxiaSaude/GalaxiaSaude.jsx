@@ -1,5 +1,5 @@
 import React from 'react';
-import './GalaxiaSaude.css';
+import './galaxiaSaude.css';
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
 import { Link } from 'react-router-dom';
 

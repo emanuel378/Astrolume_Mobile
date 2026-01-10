@@ -4,44 +4,42 @@ import { useState } from 'react';
 import axios from 'axios';
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
 import './cadastro.css';
+import api from '../../services/api';
 
 export default function Cadastro() {
-    const [usuario, setUsuario] = useState('');
+      const [usuario, setUsuario] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate(); // ← Crie a instância do navigate
+    const navigate = useNavigate();
 
     async function handleCadastro(e) {
         e.preventDefault();
         setLoading(true);
+        
         try {
-           const api = import.meta.env.VITE_API_URL;
-
-            const response = await axios.post(
-                `${api}/auth/register`,
-                {
-                    nome: usuario,
-                    email,
-                    senha
-                }
-            );
-
+            // ✅ SIMPLES E CORRETO
+            const response = await api.post('/auth/register', {
+                nome: usuario,
+                email,
+                senha
+            });
 
             console.log('Cadastro OK:', response.data);
             alert('Cadastro realizado com sucesso!');
-            
-            // 🔥 REDIRECIONA PARA A TELA DE GALÁXIAS
-            navigate('/galaxias'); // ← Aqui está o redirecionamento
+            navigate('/galaxias');
             
         } catch (error) {
-            console.error(error.response?.data || error);
-            alert('Erro ao cadastrar');
+            console.error('Erro:', error);
+            
+            // Debug: veja se a URL está correta
+            console.log('URL usada:', api.defaults.baseURL);
+            
+            alert(error.response?.data?.message || 'Erro ao cadastrar');
         } finally {
             setLoading(false);
         }
     }
-
     return (
         <>
             <FundoEstrelado />
