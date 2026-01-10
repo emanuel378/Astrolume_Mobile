@@ -18,7 +18,7 @@ export default function Cadastro() {
 
         try {
             const response = await axios.post(
-                'https://astrolume-backend.onrender.com/auth/register'
+               'https://astrolume-backend.onrender.com/auth/register'
 ,
                 {
                     nome: usuario,
