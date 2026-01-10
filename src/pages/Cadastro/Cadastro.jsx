@@ -16,15 +16,14 @@ export default function Cadastro() {
         e.preventDefault();
         setLoading(true);
 
-        try {
-            const response = await axios.post(
-               'https://astrolume-backend.onrender.com/auth/register'
-,
-                {
-                    nome: usuario,
-                    email: email,
-                    senha: senha
-                }
+       try {
+        const response = await axios.post(
+            'https://astrolume-backend.onrender.com/auth/register',
+            {
+                nome: usuario,
+                email: email,
+                senha: senha
+             }
             );
 
             console.log('Cadastro OK:', response.data);
