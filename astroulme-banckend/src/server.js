@@ -13,8 +13,8 @@ app.use(express.json());
 
 app.use('/auth', authRoutes);
 
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 
 app.listen(PORT, () => {
-  console.log(`🔥 Backend rodando em http://localhost:${PORT}`);
+  console.log(`🔥 Backend rodando na porta ${PORT}`);
 });
