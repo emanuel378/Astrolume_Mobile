@@ -7,6 +7,5 @@
         "distDir": "dist"
       }
     }
-  ],
-  "ignoreCommand": "if [ -d astroulme-banckend ]; then exit 0; fi"
+  ]
 }
