@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase/firebase'; // Certifique-se que o caminho está correto
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
+
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
 import './login.css';
 
