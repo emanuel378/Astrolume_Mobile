@@ -1,0 +1,137 @@
+/* Container das linhas */
+.linhas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Estilo individual da linha */
+.linha-conexao {
+  position: absolute;
+  background: linear-gradient(90deg, #00BFFF 0%, #925CFF 100%);
+  height: 3px;
+  border-radius: 2px;
+  transform-origin: 0 0;
+  box-shadow: 
+    0 0 8px rgba(0, 191, 255, 0.7),
+    0 0 15px rgba(146, 92, 255, 0.5);
+  transition: all 0.3s ease;
+  
+  /* Animação de pulsar */
+  animation: linha-pulsar 3s infinite ease-in-out;
+}
+
+/* Estados da linha */
+.linha-conexao.ativa {
+  background: linear-gradient(90deg, #00D4FF 0%, #B366FF 100%);
+  height: 4px;
+  box-shadow: 
+    0 0 12px rgba(0, 212, 255, 0.9),
+    0 0 20px rgba(179, 102, 255, 0.7);
+}
+
+.linha-conexao.completa {
+  background: linear-gradient(90deg, #00FF88 0%, #00D4FF 100%);
+  height: 5px;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 136, 0.9),
+    0 0 25px rgba(0, 212, 255, 0.8);
+}
+
+/* Animação de pulsar para a linha */
+@keyframes linha-pulsar {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 
+      0 0 8px rgba(0, 191, 255, 0.7),
+      0 0 15px rgba(146, 92, 255, 0.5);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 
+      0 0 12px rgba(0, 191, 255, 0.9),
+      0 0 20px rgba(146, 92, 255, 0.7);
+  }
+}
+
+/* Efeito de brilho interno */
+.linha-conexao::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 2px);
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    transparent 100%);
+  border-radius: 2px;
+  animation: brilho-deslizante 2s infinite linear;
+}
+
+@keyframes brilho-deslizante {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Pontas da linha (opcional) */
+.linha-conexao::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00BFFF;
+  box-shadow: 0 0 10px #00BFFF;
+}
+
+.linha-conexao::after {
+  right: -4px;
+}
+
+/* Para linhas que precisam de ponta no início também */
+.linha-conexao.com-ponta-inicial::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00BFFF;
+  box-shadow: 0 0 10px #00BFFF;
+}
+
+/* Efeito de hover (se quiser interatividade) */
+.linha-conexao:hover:not(.no-hover) {
+  height: 4px;
+  background: linear-gradient(90deg, #00D4FF 0%, #B366FF 100%);
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .linha-conexao {
+    height: 2.5px;
+  }
+  
+  .linha-conexao.ativa {
+    height: 3px;
+  }
+  
+  .linha-conexao.completa {
+    height: 3.5px;
+  }
+}

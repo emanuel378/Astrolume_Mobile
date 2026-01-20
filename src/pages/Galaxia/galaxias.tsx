@@ -43,9 +43,11 @@ export default function Galaxias() {
           </div>
 
           {/* BOTÃO */}
-          <button className="btn-escolher">
-            Escolher
-          </button>
+         <Link to="/galaxinicial">
+  <button className="btn-escolher">
+    Escolher
+  </button>
+</Link>
 
         </div>
 

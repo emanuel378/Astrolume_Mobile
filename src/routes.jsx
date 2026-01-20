@@ -5,6 +5,7 @@ import Inicial from "./pages/TelaInicial/Inicial";
 import Galaxias from "./pages/Galaxia/galaxias";
 import GalaxiaSaude from "./pages/GalaxiaSaude/GalaxiaSaude"
 import GalaxiaEconomica from "./pages/GalaxiaEconomica/GalaxiaEconomica";
+import GalaxiaOrion from "./pages/TelaGalaxia1";
 
 
 export default function RoutesApp(){
@@ -18,6 +19,8 @@ export default function RoutesApp(){
         <Route path="/galaxias" element={<Galaxias/>}/>
         <Route path="/galaxiasaude" element={<GalaxiaSaude/>}/>
         <Route path="/galaxieconomica" element={<GalaxiaEconomica/>}/>
+        <Route path="/galaxinicial" element={<GalaxiaOrion/>}/>
+
         
     
 

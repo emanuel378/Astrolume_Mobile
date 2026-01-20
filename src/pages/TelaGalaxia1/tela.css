@@ -1,0 +1,215 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   FUNDO GALÁXIA
+========================= */
+body {
+  font-family: "Gugi", cursive;
+  background: radial-gradient(circle at top, #081a3a, #020816);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+.galaxy-wrapper {
+  min-height: 100dvh;
+  padding: clamp(1rem, 4vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* =========================
+   HEADER
+========================= */
+.galaxy-header {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.18),
+    rgba(0, 120, 255, 0.12)
+  );
+  border: 2px solid rgba(0, 212, 255, 0.6);
+  box-shadow:
+    0 0 18px rgba(0, 212, 255, 0.45),
+    inset 0 0 14px rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+  max-width: 92vw;
+  text-align: center;
+}
+
+/* brilho animado */
+.galaxy-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: brilho-header 3.5s infinite;
+}
+
+@keyframes brilho-header {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.galaxy-header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.2rem, 5vw, 1.6rem);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-shadow:
+    0 0 10px rgba(0, 212, 255, 0.8),
+    0 0 20px rgba(0, 120, 255, 0.4);
+}
+
+.galaxy-header span {
+  display: block;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.6rem, 6vw, 2.5rem);
+  color: #00BFFF;
+  text-shadow:
+    0 0 8px rgba(0, 191, 255, 0.9),
+    0 0 16px rgba(0, 191, 255, 0.4);
+  letter-spacing: 0.8px;
+}
+
+/* =========================
+   MAPA DA GALÁXIA
+========================= */
+.galaxy-map {
+  width: 100%;
+  max-width: 420px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+  gap: clamp(16px, 4vw, 28px);
+  justify-items: center;
+  align-items: center;
+}
+
+/* =========================
+   NÓ
+========================= */
+.galaxy-node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   BOTÕES BASE
+========================= */
+.btn {
+  width: clamp(56px, 16vw, 72px);
+  height: clamp(56px, 16vw, 72px);
+  border-radius: clamp(14px, 4vw, 18px);
+  border: none;
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   NÍVEL
+========================= */
+.btn.level {
+  background: linear-gradient(145deg, #2f47ff, #1a5aff);
+  box-shadow:
+    0 0 16px rgba(26, 90, 255, 0.8),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   ESTRELA
+========================= */
+.btn.star {
+  background: linear-gradient(145deg, #ffd84d, #ffae00);
+  box-shadow:
+    0 0 18px rgba(255, 215, 0, 1),
+    inset 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+/* =========================
+   PERSONAGEM
+========================= */
+.btn.player {
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #00d4ff, #1a3cff);
+  box-shadow:
+    0 0 22px rgba(0, 212, 255, 1),
+    inset 0 0 12px rgba(255, 255, 255, 0.35);
+}
+
+/* pulsar sutil */
+.btn.player,
+.btn.star {
+  animation: pulsar 2.8s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+   PLANETA FINAL RESPONSIVO
+========================= */
+.planeta-final {
+  width: clamp(80px, 40vw, 180px);
+  margin: clamp(1.5rem, 6vw, 3rem) auto 1.5rem;
+  display: block;
+  animation: flutuar-planeta 5s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 18px rgba(0, 212, 255, 0.45))
+    drop-shadow(0 0 32px rgba(0, 120, 255, 0.25));
+}
+
+/* mobile */
+@keyframes flutuar-planeta {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .planeta-final {
+    animation-duration: 6.5s;
+  }
+
+  @keyframes flutuar-planeta {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-22px); }
+    100% { transform: translateY(0); }
+  }
+}
