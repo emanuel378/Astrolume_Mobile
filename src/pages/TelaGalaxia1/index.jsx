@@ -50,11 +50,12 @@ export default function GalaxiaOrion() {
             <div key={index} className="galaxy-node">
               {/* Astro acenando */}
               {node.type === "astroStart" && (
-                <a href="/historia">
-                   <img
-                   src={astroacenando}
-                   alt="Astro acenando"
-                   className="btn player"/></a>
+                <Link to="/historia">
+                  <img
+                  src={astroacenando}
+                  alt="Astro acenando"
+                  className="btn player"/>
+                  </Link>
               )}
 
               {/* Níveis */}
