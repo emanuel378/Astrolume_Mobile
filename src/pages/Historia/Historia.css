@@ -1,0 +1,197 @@
+/* CONTAINER PRINCIPAL */
+.historia-container {
+  min-height: 100vh;
+  padding: 20px 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* TÍTULO - RESPONSIVO */
+.historia-titulo {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+/* Tamanhos responsivos para título */
+.historia-titulo {
+  font-size: 28px; /* Tamanho menor para celular */
+}
+
+@media (min-width: 400px) {
+  .historia-titulo {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .historia-titulo {
+    font-size: 36px; /* Tamanho original para tablets+ */
+  }
+}
+
+.historia-titulo span {
+  color: #0AC1FF;
+}
+
+/* CONTAINER DA IMAGEM - RESPONSIVO */
+.historia-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 480px) {
+  .historia-img-wrapper {
+    max-width: 450px;
+  }
+}
+
+/* ESTILO DA IMAGEM ÚNICA */
+.img-principal {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  image-rendering: auto;
+  border-radius: 14px; /* Bordas um pouco menores para mobile */
+  border: 1px solid rgba(46, 203, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra menor */
+}
+
+@media (min-width: 768px) {
+  .img-principal {
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* BOTÕES - RESPONSIVO */
+.historia-botoes {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column; /* Empilha os botões em mobile */
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+}
+
+@media (min-width: 480px) {
+  .historia-botoes {
+    flex-direction: row; /* Lado a lado em telas maiores */
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* BOTÃO VOLTAR - RESPONSIVO */
+.bt-voltar {
+  padding: 14px 0; /* Padding vertical maior, horizontal menor */
+  font-family: 'Gugi', cursive;
+  font-size: 1rem; /* Tamanho menor para mobile */
+  font-weight: 600;
+  border-radius: 50px; /* Mantém o pill */
+  cursor: pointer;
+  width: 100%; /* Ocupa toda a largura disponível em mobile */
+  max-width: 280px; /* Limite máximo */
+  background: transparent;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid #0AC1FF;
+  box-shadow: 0 0 8px rgba(10, 193, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 480px) {
+  .bt-voltar {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    min-width: 180px;
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .bt-voltar {
+    padding: 16px 48px;
+    font-size: 1.2rem;
+    min-width: 200px;
+  }
+}
+
+.bt-voltar:hover {
+  box-shadow: 0 0 18px rgba(10, 193, 255, 0.9);
+  transform: scale(1.04);
+}
+
+/* BOTÃO CONTINUAR - RESPONSIVO */
+.bt-continuar {
+  padding: 14px 0; /* Padding vertical maior, horizontal menor */
+  font-family: 'Gugi', cursive;
+  font-size: 1rem; /* Tamanho menor para mobile */
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%; /* Ocupa toda a largura disponível em mobile */
+  max-width: 280px; /* Limite máximo */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #0066CC 0%, #00BFFF 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 480px) {
+  .bt-continuar {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    min-width: 180px;
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .bt-continuar {
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    min-width: 180px;
+  }
+}
+
+.bt-continuar:hover {
+  transform: translateY(-3px); /* Efeito mais suave para mobile */
+  box-shadow: 0 10px 25px rgba(0, 102, 204, 0.6);
+}
+
+/* Adiciona toque de interação para mobile */
+.bt-voltar:active,
+.bt-continuar:active {
+  transform: scale(0.98);
+}
+
+/* Garante que o fundo estrelado não interfira */
+.FundoEstrelado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}

@@ -7,7 +7,7 @@ import astroacenando from "../../assets/astroacenando.png";
 import Star from "../../assets/Star.png";
 import planeta from "../../assets/planeta.png";
 import Navegacao from "../../componets/Footer";
-
+import { Link } from "react-router-dom";
 export default function GalaxiaOrion() {
   const nodes = [
     { id: "astroStart", type: "astroStart" }, // Astro acenando (início)
@@ -50,11 +50,11 @@ export default function GalaxiaOrion() {
             <div key={index} className="galaxy-node">
               {/* Astro acenando */}
               {node.type === "astroStart" && (
-                <img
-                  src={astroacenando}
-                  alt="Astro acenando"
-                  className="btn player"
-                />
+                <a href="/historia">
+                   <img
+                   src={astroacenando}
+                   alt="Astro acenando"
+                   className="btn player"/></a>
               )}
 
               {/* Níveis */}
