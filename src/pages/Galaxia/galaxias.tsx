@@ -14,7 +14,7 @@ import terra3 from '../../assets/terra3.png';
 
 export default function Galaxias() {
   return (
-    <>
+    <> 
       <FundoEstrelado />
 
       <div className="galaxias-container">

@@ -6,6 +6,7 @@ import Nave from "../../assets/Nave.png";
 import astroacenando from "../../assets/astroacenando.png";
 import Star from "../../assets/Star.png";
 import planeta from "../../assets/planeta.png";
+import Navegacao from "../../componets/Footer";
 
 export default function GalaxiaOrion() {
   const nodes = [
@@ -91,7 +92,10 @@ export default function GalaxiaOrion() {
             alt="Planeta final"
             className="planeta-final"
           />
+
+
         </div>
+        <Navegacao/>
       </div>
     </>
   );

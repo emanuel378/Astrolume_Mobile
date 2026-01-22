@@ -1,0 +1,51 @@
+.navegacao-container {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* BARRA PRINCIPAL (IGUAL À IMAGEM) */
+.navegacao {
+  background: rgba(13, 5, 30, 0.75); /* #0D051E transparente */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+  padding: 14px 32px;
+
+  border-radius: 50px;
+
+  box-shadow:
+    0 0 20px rgba(160, 120, 255, 0.25),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* ÍCONES */
+.navegacao img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* HOVER */
+.navegacao img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* ÍCONE PREMIUM (COROA) */
+.navegacao img.premium {
+  filter: drop-shadow(0 0 6px gold);
+  opacity: 1;
+}
