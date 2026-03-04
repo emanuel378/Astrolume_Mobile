@@ -27,7 +27,9 @@ export default function Historia() {
           <Link to="/galaxinicial">
           <button className="bt-voltar">Voltar</button>
           </Link>
+          <Link to="/r1">
           <button className="bt-continuar">Continuar</button>
+          </Link>
         </div>
       </div>
     </>
