@@ -213,3 +213,17 @@ body {
     100% { transform: translateY(0); }
   }
 }
+.node-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Isso garante que o Link ocupe o espaço correto no mapa */
+}
+
+/* Opcional: Efeito de hover para os níveis */
+.btn.level:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  transition: 0.2s;
+}

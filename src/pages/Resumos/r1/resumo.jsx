@@ -29,7 +29,7 @@ export default function Resumo1() {
                 <button className="btn-continuar">Continuar</button> 
 
 
-                <Link to="/historia">
+                <Link to="/galaxinicial">
                 <button className="btn-voltar">Voltar</button>
                 </Link>
             </div>
