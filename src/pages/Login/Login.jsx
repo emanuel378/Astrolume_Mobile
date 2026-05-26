@@ -29,13 +29,15 @@ export default function Login() {
       console.error(error);
       
       let mensagem = 'Erro ao entrar';
-      
+
       if (error.code === 'auth/invalid-credential') {
         mensagem = 'E-mail ou senha incorretos';
       } else if (error.code === 'auth/user-not-found') {
         mensagem = 'Usuário não encontrado';
       } else if (error.code === 'auth/wrong-password') {
         mensagem = 'Senha incorreta';
+      } else if (error.code === 'auth/too-many-requests') {
+        mensagem = 'Conta temporariamente bloqueada por muitas tentativas';
       }
 
       alert(mensagem);

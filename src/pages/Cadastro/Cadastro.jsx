@@ -2,9 +2,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import { auth, db } from '../../firebase/firebase';
+import { auth } from '../../firebase/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
 
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
 import './cadastro.css';
@@ -22,21 +21,7 @@ export default function Cadastro() {
     setLoading(true);
 
     try {
-      // 🔐 Cria usuário no Firebase Auth
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        senha
-      );
-
-      const user = userCredential.user;
-
-      // 🗂️ Salva dados extras no Firestore
-      await setDoc(doc(db, 'usuarios', user.uid), {
-        nome: usuario,
-        email: email,
-        criadoEm: new Date()
-      });
+      await createUserWithEmailAndPassword(auth, email, senha);
 
       alert('Cadastro realizado com sucesso!');
       navigate('/galaxias');

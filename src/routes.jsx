@@ -24,22 +24,7 @@ export default function RoutesApp(){
         <Route path="/galaxinicial" element={<GalaxiaOrion/>}/>
         <Route path="/historia" element={<Historia/>}/>
         <Route path="/r1" element={<Resumo1/>}/>
-
-        
-    
-
-
-        
-
-
-      
-
-
     </Routes>
-    
-    
-    
-    
     </BrowserRouter>
     )
 }
