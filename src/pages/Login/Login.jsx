@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase/firebase'; // Certifique-se que o caminho está correto
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
@@ -41,6 +41,23 @@ export default function Login() {
       }
 
       alert(mensagem);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleGoogleLogin() {
+    setLoading(true);
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      alert('Bem-vindo!');
+      navigate('/galaxias');
+    } catch (error) {
+      console.error(error);
+      if (error.code !== 'auth/popup-closed-by-user') {
+        alert('Erro ao entrar com Google');
+      }
     } finally {
       setLoading(false);
     }
@@ -93,12 +110,10 @@ export default function Login() {
         </div>
 
         <div className="botoes-sociais">
-          <button className="btn-social google" type="button">
+          <button className="btn-social google" type="button" onClick={handleGoogleLogin} disabled={loading}>
             Google
           </button>
-          <button className="btn-social facebook" type="button">
-            Facebook
-          </button>
+
         </div>
 
         <div className="links-navegacao">
