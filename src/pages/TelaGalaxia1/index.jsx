@@ -4,6 +4,7 @@ import FundoEstrelado from "../../componets/FundoEstrelado/FundoEstrelado";
 import Navegacao from "../../componets/Footer";
 import "./tela.css";
 
+
 // 📦 Assets
 import Nave from "../../assets/Nave.png";
 import astroacenando from "../../assets/astroacenando.png";
@@ -17,10 +18,10 @@ export default function GalaxiaOrion() {
     { id: 1, type: "level" },
     { id: 2, type: "level", route: "/questao2" },
     { id: 3, type: "level", route: "/questao3" },
-    { id: 4, type: "level" },
-    { id: 5, type: "level" },
+    { id: 4, type: "level", route: "/questao4" },
+    { id: 5, type: "level", route: "/questao5" },
     { id: "star", type: "star" }, // ⭐ estrela no lugar do 6
-    { id: "player", type: "player" }, // nave / astro
+    { id: "player", type: "player" }, // nave / astro / historia em quadrinho
     { id: 7, type: "level" },
     { id: 8, type: "level" },
     { id: 9, type: "level" },
