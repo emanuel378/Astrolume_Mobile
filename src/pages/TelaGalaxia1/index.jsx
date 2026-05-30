@@ -15,16 +15,16 @@ export default function GalaxiaOrion() {
   const nodes = [
     { id: "astroStart", type: "astroStart" }, // Astro acenando (início)
     { id: 1, type: "level" },
-    { id: 2, type: "level" },
-    { id: 3, type: "level" },
+    { id: 2, type: "level", route: "/questao2" },
+    { id: 3, type: "level", route: "/questao3" },
     { id: 4, type: "level" },
     { id: 5, type: "level" },
-    { id: "star", type: "star" },             // ⭐ estrela no lugar do 6
-    { id: "player", type: "player" },         // nave / astro
+    { id: "star", type: "star" }, // ⭐ estrela no lugar do 6
+    { id: "player", type: "player" }, // nave / astro
     { id: 7, type: "level" },
     { id: 8, type: "level" },
     { id: 9, type: "level" },
-    { id: 10, type: "level" }
+    { id: 10, type: "level" },
   ];
 
   return (
@@ -44,7 +44,6 @@ export default function GalaxiaOrion() {
         <section className="galaxy-map">
           {nodes.map((node, index) => (
             <div key={index} className="galaxy-node">
-              
               {/* Astro acenando - Vai para História */}
               {node.type === "astroStart" && (
                 <Link to="/historia">
@@ -87,14 +86,10 @@ export default function GalaxiaOrion() {
           style={{
             display: "flex",
             justifyContent: "center",
-            marginTop: "3rem"
+            marginTop: "3rem",
           }}
         >
-          <img
-            src={planeta}
-            alt="Planeta final"
-            className="planeta-final"
-          />
+          <img src={planeta} alt="Planeta final" className="planeta-final" />
         </div>
 
         <Navegacao />
