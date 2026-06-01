@@ -1,4 +1,5 @@
 import "./painel.css"; // 👈 Ligando o CSS da forma certa
+import { useNavigate } from "react-router-dom"; // 👈 Importando o gerenciador de rotas
 import {
   Home,
   Bell,
@@ -9,6 +10,8 @@ import {
 } from "lucide-react";
 
 export default function App() {
+  const navigate = useNavigate(); // 👈 Ativando o hook de navegação
+
   const turmas = [
     { nome: "Turma A", alunos: 31 },
     { nome: "Turma B", alunos: 20 },
@@ -20,12 +23,30 @@ export default function App() {
     { titulo: "Missão Estelar", desc: "Criado em 13/12/2025" },
   ];
 
+  // 🚪 Função que lida com o logout com confirmação
+  const handleLogout = () => {
+    const desejaSair = window.confirm("Você realmente deseja sair da conta?");
+    
+    if (desejaSair) {
+      // Se você tiver tokens ou dados de login no localStorage, limpe-os aqui:
+      // localStorage.removeItem("token"); 
+      
+      navigate("/"); // 👈 Redireciona para a página inicial/login
+    }
+    // Se clicar em 'Cancelar', não faz nada e continua na tela do painel
+  };
+
   return (
     <div className="app">
       <div className="dashboard">
         {/* HEADER */}
         <div className="header">
-          <img src="https://i.imgur.com/8Km9tLL.png" alt="" className="avatar" />
+          {/* Foto de perfil anônima com o estilo do app */}
+          <img 
+            src="https://cdn-icons-png.flaticon.com/512/149/149071.png" 
+            alt="Avatar Anônimo" 
+            className="avatar" 
+          />
           <div>
             <h2>Olá, professor</h2>
             <p>Explorando estrelas,<br />transformando futuros.</p>
@@ -88,7 +109,10 @@ export default function App() {
           ))}
         </div>
 
-        <button className="btn-sair">Sair da conta</button>
+        {/* 🚪 BOTÃO DE SAIR CONFIGURADO */}
+        <button className="btn-sair" onClick={handleLogout}>
+          Sair da conta
+        </button>
       </div>
 
       {/* NAVBAR */}
