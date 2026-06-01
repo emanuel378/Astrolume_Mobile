@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { auth } from '../../firebase/firebase';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'; // 👈 IMPORTADO: Método de login
+import { 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword 
+} from 'firebase/auth'; 
 
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
 import './entrar_prof.css';
@@ -17,7 +20,7 @@ export default function ProfessorCadastro() {
 
   const navigate = useNavigate();
 
-  // 🛠️ FUNÇÃO UNIFICADA E CORRIGIDA
+  // 🛠️ FUNÇÃO DE AUTENTICAÇÃO
   async function handleAutenticacao(e) {
     e.preventDefault();
     setLoading(true);
@@ -26,7 +29,6 @@ export default function ProfessorCadastro() {
       if (abaAtiva === 'criar') {
         // --- LOGICA DE CADASTRO ---
         await createUserWithEmailAndPassword(auth, email, senha);
-        // Aqui você pode salvar o 'nome' e 'escola' no Firestore depois se quiser
         alert('Professor cadastrado com sucesso!');
         navigate('/dashboardProfessor');
       } else {
@@ -39,7 +41,6 @@ export default function ProfessorCadastro() {
       console.error(error);
       let mensagem = 'Erro ao processar a requisição';
 
-      // Tratamento de erros para Cadastro e Login
       if (error.code === 'auth/email-already-in-use') {
         mensagem = 'Este e-mail já está cadastrado!';
       } else if (error.code === 'auth/weak-password') {
@@ -86,7 +87,6 @@ export default function ProfessorCadastro() {
           </div>
 
           <form className="form-professor" onSubmit={handleAutenticacao}>
-            {/* O campo de Nome só aparece na aba de cadastro */}
             {abaAtiva === 'criar' && (
               <div className="input-group">
                 <label htmlFor="nome">Nome</label>
@@ -121,11 +121,32 @@ export default function ProfessorCadastro() {
                 placeholder="Insira sua senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
-                required
+                required={abaAtiva === 'entrar' || abaAtiva === 'criar'}
               />
+              
+              {/* 🔄 MODIFICADO: Agora redireciona para a rota da nova tela */}
+              {abaAtiva === 'entrar' && (
+                <button 
+                  type="button" 
+                  className="link-esqueci-senha" 
+                  onClick={() => navigate('/recuperar-senha')} // 👈 Coloque a rota correspondente ao arquivo senha_prof.jsx
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#00bcd4', 
+                    cursor: 'pointer',
+                    fontSize: '0.85rem',
+                    textAlign: 'right',
+                    marginTop: '5px',
+                    display: 'block',
+                    width: '100%'
+                  }}
+                >
+                  Esqueceu a senha?
+                </button>
+              )}
             </div>
 
-            {/* O campo de Escola só aparece na aba de cadastro */}
             {abaAtiva === 'criar' && (
               <div className="input-group">
                 <label htmlFor="escola">Escola</label>
@@ -144,12 +165,10 @@ export default function ProfessorCadastro() {
               {loading ? 'Processando...' : abaAtiva === 'criar' ? 'Cadastrar' : 'Entrar'}
             </button>
 
-            {/* Divisor "ou" */}
             <div className="divisor-ou">
               <span>ou</span>
             </div>
 
-            {/* Botões das Redes Sociais */}
             <div className="sociais-container">
               <button type="button" className="btn-social">
                 <img src="https://i.imgur.com/vGgZ66u.png" alt="Google" width="18" /> Google

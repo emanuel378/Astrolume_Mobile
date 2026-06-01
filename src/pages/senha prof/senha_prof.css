@@ -1,0 +1,178 @@
+.container-esqueceu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  /* 🌟 Mudança aqui: background transparente para o FundoEstrelado aparecer */
+  background: transparent; 
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1; /* Garante que os cards fiquem na frente das estrelas */
+}
+
+/* Card Superior com Borda Azul Ciano */
+.card-alerta-senha {
+  display: flex;
+  align-items: center;
+  background-color: #0b061f;
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  padding: 18px 24px;
+  width: 100%;
+  max-width: 380px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.avatar-robo-container {
+  margin-right: 18px;
+}
+
+.circulo-robo-azul {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #00bfff, #0056b3);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.interrogacao-robo {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.estrela-robo {
+  position: absolute;
+  bottom: 2px;
+  font-size: 0.75rem;
+}
+
+.texto-alerta-senha h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.texto-alerta-senha .destaque-azul {
+  color: #00bfff;
+  font-weight: 600;
+}
+
+/* Card Inferior do Formulário */
+.card-formulario-senha {
+  background-color: #0b061f;
+  border: 2px solid #4d12bb;
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 0 25px rgba(77, 18, 187, 0.25);
+  box-sizing: border-box;
+}
+
+.form-esqueceu {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.input-group-senha {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group-senha label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.input-group-senha input {
+  background-color: #1a153b;
+  border: 1px solid #322963;
+  border-radius: 10px;
+  padding: 14px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group-senha input::placeholder {
+  color: #554b7c;
+}
+
+.input-group-senha input:focus {
+  border-color: #00bfff;
+}
+
+.input-group-senha.campo-bloqueado input {
+  opacity: 0.4;
+  background-color: #120e2e;
+  border-color: #241c49;
+  cursor: not-allowed;
+}
+
+.dica-firebase {
+  font-size: 0.75rem;
+  color: #00bfff;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+/* Botão Confirmar Senha */
+.btn-confirmar-senha {
+  background: linear-gradient(90deg, #00f0ff, #0077ff);
+  border: none;
+  border-radius: 10px;
+  color: #050214;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.35);
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-confirmar-senha:hover {
+  opacity: 0.9;
+}
+
+.btn-confirmar-senha:active {
+  transform: scale(0.98);
+}
+
+.btn-confirmar-senha:disabled {
+  background: #322963;
+  color: #554b7c;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Links de Retorno */
+.links-esqueceu {
+  margin-top: 24px;
+}
+
+.link-voltar-senha {
+  color: #554b7c;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.link-voltar-senha:hover {
+  color: #00bfff;
+}

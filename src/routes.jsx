@@ -9,9 +9,10 @@ import GalaxiaOrion from "./pages/TelaGalaxia1";
 import Historia from "./pages/Historia";
 import Resumo1 from "./pages/Resumos/r1/resumo";
 import ProfessorCadastro from "./pages/login_prof/entrar_prof"; 
-
-// 👇 ALTERADO PARA A PASTA NOVA SEM CACHE:
 import DashboardProfessor from "./pages/painel/painel";
+
+// 🔑 IMPORTADO: Sua nova tela de esquceu senha
+import SenhaProf from "./pages/senha prof/senha_prof"; 
 
 export default function RoutesApp(){
     return(
@@ -29,6 +30,9 @@ export default function RoutesApp(){
                 
                 <Route path="/professor" element={<ProfessorCadastro/>}/>
                 <Route path="/dashboardProfessor" element={<DashboardProfessor/>}/>
+
+                {/* 🚀 ADICIONADO: Rota para a tela de redefinição de senha */}
+                <Route path="/recuperar-senha" element={<SenhaProf/>}/>
             </Routes>
         </BrowserRouter>
     )
