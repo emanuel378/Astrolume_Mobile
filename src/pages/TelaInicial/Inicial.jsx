@@ -1,45 +1,64 @@
 import astroacenando from '../../assets/astroacenando.png';
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
 import './Inicial.css';
-import { useNavigate } from 'react-router-dom'; // Importe useNavigate
+import { useNavigate } from 'react-router-dom';
 
 export default function Inicial() {
-  const navigate = useNavigate(); // Crie a função navigate
+  const navigate = useNavigate();
 
   return (
     <>
       <FundoEstrelado />
+
       <div className='container'>
-        <div className='titulo'>A aventura começa agora.</div>
-        <img 
-          src={astroacenando} 
-          alt="Astronauta acenando" 
-          className='Orionacenando' 
+
+        <div className='titulo'>
+          A aventura começa agora.
+        </div>
+
+        <img
+          src={astroacenando}
+          alt="Astronauta acenando"
+          className='Orionacenando'
         />
 
         <div className='Astrolume'>
           <span className="splash-title-first">Astro</span>
           <span className="splash-title-second">Lume</span>
         </div>
-        
-        <div className='slogan'> Sua jornada. Brilhe!</div>
-        
+
+        <div className='slogan'>
+          Sua jornada. Brilhe!
+        </div>
+
         <div className='Buttons'>
-          {/* Botão Criar Conta com onClick */}
-          <button 
+
+          {/* Criar Conta */}
+          <button
             className='btn-criar-conta'
-            onClick={() => navigate('/cadastro')} // Navega para cadastro
+            onClick={() => navigate('/cadastro')}
           >
             Criar conta
           </button>
-          
-          {/* Botão Entrar com onClick */}
-          <button 
-            onClick={() => navigate('/login')} // Navega para login
+
+          {/* Entrar */}
+          <button
+            className='btn-entrar'
+            onClick={() => navigate('/login')}
           >
             Entrar
           </button>
+
+          {/* Entrar como professor */}
+          <button
+            className='btn-professor'
+            onClick={() => navigate('/professor')}
+          >
+            Entrar como Professor
+          </button>
+
         </div>
+
       </div>
     </>
   );

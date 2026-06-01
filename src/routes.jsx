@@ -1,45 +1,35 @@
-import {BrowserRouter,Routes,Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login/Login"; 
 import Cadastro from "./pages/Cadastro/Cadastro";
 import Inicial from "./pages/TelaInicial/Inicial";
 import Galaxias from "./pages/Galaxia/galaxias";
-import GalaxiaSaude from "./pages/GalaxiaSaude/GalaxiaSaude"
+import GalaxiaSaude from "./pages/GalaxiaSaude/GalaxiaSaude";
 import GalaxiaEconomica from "./pages/GalaxiaEconomica/GalaxiaEconomica";
 import GalaxiaOrion from "./pages/TelaGalaxia1";
 import Historia from "./pages/Historia";
 import Resumo1 from "./pages/Resumos/r1/resumo";
+import ProfessorCadastro from "./pages/login_prof/entrar_prof"; 
 
+// 👇 ALTERADO PARA A PASTA NOVA SEM CACHE:
+import DashboardProfessor from "./pages/painel/painel";
 
 export default function RoutesApp(){
     return(
-    <BrowserRouter>
-    <Routes>
-
-        <Route path="/" element={<Inicial/>}/>
-        <Route path="/cadastro" element={<Cadastro/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/galaxias" element={<Galaxias/>}/>
-        <Route path="/galaxiasaude" element={<GalaxiaSaude/>}/>
-        <Route path="/galaxieconomica" element={<GalaxiaEconomica/>}/>
-        <Route path="/galaxinicial" element={<GalaxiaOrion/>}/>
-        <Route path="/historia" element={<Historia/>}/>
-        <Route path="/r1" element={<Resumo1/>}/>
-
-        
-    
-
-
-        
-
-
-      
-
-
-    </Routes>
-    
-    
-    
-    
-    </BrowserRouter>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Inicial/>}/>
+                <Route path="/cadastro" element={<Cadastro/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/galaxias" element={<Galaxias/>}/>
+                <Route path="/galaxiasaude" element={<GalaxiaSaude/>}/>
+                <Route path="/galaxieconomica" element={<GalaxiaEconomica/>}/>
+                <Route path="/galaxinicial" element={<GalaxiaOrion/>}/>
+                <Route path="/historia" element={<Historia/>}/>
+                <Route path="/r1" element={<Resumo1/>}/>
+                
+                <Route path="/professor" element={<ProfessorCadastro/>}/>
+                <Route path="/dashboardProfessor" element={<DashboardProfessor/>}/>
+            </Routes>
+        </BrowserRouter>
     )
 }

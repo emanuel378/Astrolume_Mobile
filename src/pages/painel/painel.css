@@ -1,0 +1,373 @@
+/* ==========================================================================
+   🌌 ASTRO LUME - PAINEL DO PROFESSOR (PREMIUM CORRIGIDO)
+   ========================================================================== */
+
+:root {
+  --bg-space: #070018;
+  --bg-card: rgba(18, 3, 45, 0.65);
+  --bg-card-hover: rgba(27, 11, 63, 0.85);
+  --cyan-lume: #00D4FF;
+  --cyan-glow: rgba(0, 212, 255, 0.35);
+  --text-white: #ffffff;
+  --text-gray: rgba(255, 255, 255, 0.6);
+  --border-subtle: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg-space);
+  color: var(--text-white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* 📱 Container do App centralizado e simulando Mobile */
+.app {
+  width: 100%;
+  max-width: 375px; /* Ajustado para 375px para casar com a viewport do dispositivo */
+  min-height: 100vh;
+  background: var(--bg-space);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Área de Conteúdo do Dashboard */
+.dashboard {
+  flex: 1;
+  /* Aumentado o padding-bottom para 90px para nenhum elemento sumir atrás da navbar */
+  padding: 2rem 1rem 90px 1rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem; /* Espaçamento vertical equilibrado entre blocos */
+}
+
+/* ==========================================
+   👤 HEADER (BOAS-VINDAS)
+   ========================================== */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 0.2rem;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--cyan-lume);
+  box-shadow: 0 0 15px var(--cyan-glow);
+  object-fit: cover;
+}
+
+.header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.header p {
+  color: #7fe7ff;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+/* ==========================================
+   📊 METRICS GRID (CARDS)
+   ========================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem; /* Reduzido levemente para evitar transbordo lateral */
+}
+
+.card {
+  background: var(--bg-card);
+  border: var(--border-subtle);
+  border-radius: 18px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan-lume);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.15);
+}
+
+.card svg {
+  color: var(--cyan-lume);
+  width: 20px;
+  height: 20px;
+  margin-bottom: 2px;
+}
+
+.card h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.card span {
+  color: var(--text-gray);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+/* ==========================================
+   📦 BOXES EXTERNOS (TURMAS & GRÁFICOS)
+   ========================================== */
+.box {
+  background: var(--bg-card);
+  border: var(--border-subtle);
+  border-radius: 20px;
+  padding: 1.2rem;
+  backdrop-filter: blur(10px);
+}
+
+.box h2, h2.titulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: -0.2px;
+}
+
+/* Lista de linhas de turmas */
+.turma {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.turma:last-child {
+  margin-bottom: 0;
+}
+
+.turma:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.turma span:last-child {
+  color: var(--cyan-lume);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   📈 PROGRESS BARS (GRÁFICO)
+   ========================================== */
+.grafico {
+  height: 150px; /* Ajustado para equilibrar verticalmente */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
+}
+
+.barra-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.barra {
+  width: 30px;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(180deg, var(--cyan-lume) 0%, #0052ff 100%);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.barra:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 20px var(--cyan-lume);
+}
+
+.barra1 { height: 70px; }
+.barra2 { height: 115px; }
+.barra3 { height: 90px; }
+
+.barra-area span {
+  font-size: 0.7rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+/* ==========================================
+   ⚡ QUICK ACTIONS (BOTÕES DE AÇÃO)
+   ========================================== */
+h2.titulo {
+  margin-bottom: 1rem;
+  text-transform: uppercase; /* Força padronização visual */
+}
+
+.acoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.acao {
+  background: var(--bg-card);
+  border: var(--border-subtle);
+  border-radius: 18px;
+  height: 95px; /* Compactado para o mobile não quebrar a barra */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.acao:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--cyan-lume);
+  transform: translateY(-2px);
+}
+
+.acao svg {
+  color: var(--cyan-lume);
+  width: 22px;
+  height: 22px;
+}
+
+.acao span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.grande {
+  grid-column: span 2;
+  height: 54px;
+  flex-direction: row;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+/* ==========================================
+   📝 ACTIVITY LIST (ATIVIDADES)
+   ========================================== */
+.atividade {
+  background: var(--bg-card);
+  border: var(--border-subtle);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.atividade:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+  background: rgba(18, 3, 45, 0.8);
+}
+
+.atividade-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.atividade svg {
+  color: var(--cyan-lume);
+  width: 18px;
+  height: 18px;
+}
+
+.atividade h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.atividade p {
+  color: var(--text-gray);
+  font-size: 0.72rem;
+}
+
+/* ==========================================
+   🚪 LOGOUT BUTTON
+   ========================================== */
+.btn-sair {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 14px;
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, #00cfff 0%, #0044ff 100%);
+  color: #03000a;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 207, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-sair:hover {
+  box-shadow: 0 6px 25px rgba(0, 207, 255, 0.4);
+}
+
+/* ==========================================
+   📱 BOTTOM FIXED NAVBAR (ALINHAMENTO SEGURO)
+   ========================================== */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%; /* 👈 Garante centralização perfeita na tela */
+  transform: translateX(-50%); /* 👈 Evita desalinhamento para os lados */
+  width: 100%;
+  max-width: 375px; /* Mantém estrito ao tamanho máximo estipulado */
+  height: 68px;
+  background: #0d0222;
+  border-top: 1px solid rgba(0, 212, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.6);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.navbar svg {
+  color: rgba(255, 255, 255, 0.35);
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.navbar .ativo {
+  color: var(--cyan-lume);
+  filter: drop-shadow(0 0 6px var(--cyan-glow));
+}

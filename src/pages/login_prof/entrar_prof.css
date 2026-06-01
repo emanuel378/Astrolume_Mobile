@@ -1,0 +1,193 @@
+/* ==========================================
+   🪐 ASTRO LUME - ESTILO ATUALIZADO
+   ========================================== */
+:root {
+  --bg-space: #070018;
+  --bg-input: #1f1a3a; 
+  --cyan-lume: #00D4FF;
+  --cyan-glow: rgba(0, 212, 255, 0.4);
+  --text-white: #ffffff;
+  --text-gray: rgba(255, 255, 255, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-professor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  max-width: 410px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* TÍTULOS */
+.titulo-professor {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.titulo-poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: var(--text-white);
+}
+
+.titulo-gugi {
+  font-family: "Poppins", sans-serif; /* Alterado para Poppins conforme a imagem */
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--cyan-lume);
+  text-shadow: 0 0 10px var(--cyan-glow);
+}
+
+/* CAIXA DO FORMULÁRIO COM BORDA DEGRADÊ/NEON */
+.card-formulario {
+  width: 100%;
+  background: rgba(13, 5, 37, 0.7);
+  border: 1px solid #4a25a9;
+  border-image: linear-gradient(to bottom, #00D4FF, #4a25a9) 1;
+  border-radius: 16px; /* Nota: border-image pode desativar border-radius em navegadores antigos */
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0 20px rgba(74, 37, 169, 0.3);
+}
+
+/* ABAS ALTERNADORAS */
+.abas-navegacao {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.aba-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-gray);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.aba-btn.ativa {
+  color: var(--cyan-lume);
+  border-bottom: 3px solid var(--cyan-lume);
+  font-weight: 500;
+}
+
+/* FORMULÁRIO */
+.form-professor {
+  width: 100%;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: var(--text-white);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-input);
+  color: var(--text-white);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+}
+
+.input-group input::placeholder {
+  color: var(--text-gray);
+}
+
+/* BOTÃO PRINCIPAL */
+.btn-professor {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #000;
+  background: linear-gradient(90deg, #00D4FF 0%, #1d8cf8 100%);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* DIVISOR OU */
+.divisor-ou {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-white);
+  margin: 1.5rem 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+}
+
+.divisor-ou::before,
+.divisor-ou::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.divisor-ou:not(:empty)::before { margin-right: .5em; }
+.divisor-ou:not(:empty)::after { margin-left: .5em; }
+
+/* REDES SOCIAIS */
+.sociais-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.btn-social {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #231b42;
+  border: none;
+  border-radius: 12px;
+  color: var(--text-white);
+  padding: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.links-professor {
+  margin-top: 1.5rem;
+}
+
+.link-voltar {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+}
