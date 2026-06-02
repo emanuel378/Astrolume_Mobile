@@ -11,22 +11,13 @@ import Resumo1 from "./pages/Resumos/r1/resumo";
 import ProfessorCadastro from "./pages/login_prof/entrar_prof"; 
 import DashboardProfessor from "./pages/painel/painel";
 
-// 🚀 IMPORT CORRIGIDO: Apontando para o seu arquivo real dentro de "./pages/turmas"
-import MinhasTurmas from "./pages/turmas/turmas"; 
+// 🚀 IMPORTS TOTALMENTE CORRIGIDOS CONFORME A SUA BARRA LATERAL:
+import MinhasTurmas from "./pages/Minhas_Turmas/turmas"; 
+import NovaTarefa from "./pages/Tarefas/tarefa"; 
 
 // 🔑 IMPORTS: Telas do fluxo de recuperação de senha
 import SenhaProf from "./pages/senha prof/senha_prof"; 
 import AtualizarSenha from "./pages/senha prof/atualizar_senha.jsx"; 
-
-// Componente temporário apenas para a rota /tarefa não quebrar o app
-function TelaTarefaTemporaria() {
-    return (
-        <div style={{ background: "#0b061f", color: "#fff", height: "100vh", padding: "40px", fontFamily: "sans-serif" }}>
-            <h1>🚀 Central de Atividades Astro Lume</h1>
-            <p>Sua tela de tarefas/atividades está pronta para ser desenvolvida aqui!</p>
-        </div>
-    );
-}
 
 export default function RoutesApp(){
     return(
@@ -46,18 +37,17 @@ export default function RoutesApp(){
                 <Route path="/professor" element={<ProfessorCadastro/>}/>
                 <Route path="/dashboardProfessor" element={<DashboardProfessor/>}/>
                 
-                {/* 🔄 Atalho inteligente para o botão Home */}
+                {/* 🔄 Atalho inteligente para o botão Home do Painel */}
                 <Route path="/painel" element={<Navigate to="/dashboardProfessor" replace />} />
 
-                {/* 👥 ROTA DAS TURMAS CORRIGIDA */}
+                {/* 👥 ROTA DAS TURMAS */}
                 <Route path="/turmas" element={<MinhasTurmas/>}/>
 
-                {/* 📝 ROTA DAS TAREFAS/ATIVIDADES */}
-                <Route path="/tarefa" element={<TelaTarefaTemporaria/>}/>
+                {/* 📝 ROTA DAS TAREFAS */}
+                <Route path="/tarefa" element={<NovaTarefa/>}/>
 
                 {/* 🔑 CONFIGURAÇÃO DE SENHA */}
                 <Route path="/recuperar-senha" element={<SenhaProf/>}/>
-                {/* 🎯 CORREÇÃO AQUI: Mudado de TransitSenha para o componente correto */}
                 <Route path="/atualizar-senha" element={<AtualizarSenha/>}/>
             </Routes>
         </BrowserRouter>

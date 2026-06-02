@@ -1,4 +1,4 @@
-import "./NovaTarefa.css";
+import "./tarefa.css";
 import { useNavigate } from "react-router-dom";
 import { Home, BookOpen, Bell, User, Users } from "lucide-react";
 
