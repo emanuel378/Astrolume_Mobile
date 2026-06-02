@@ -10,6 +10,7 @@ import Historia from "./pages/Historia";
 import Resumo1 from "./pages/Resumos/r1/resumo";
 import ProfessorCadastro from "./pages/login_prof/entrar_prof"; 
 import DashboardProfessor from "./pages/painel/painel";
+import NovoAluno from "./pages/novo aluno/novo_aluno"; 
 
 // 🚀 IMPORTS TOTALMENTE CORRIGIDOS CONFORME A SUA BARRA LATERAL:
 import MinhasTurmas from "./pages/Minhas_Turmas/turmas"; 
@@ -42,6 +43,9 @@ export default function RoutesApp(){
 
                 {/* 👥 ROTA DAS TURMAS */}
                 <Route path="/turmas" element={<MinhasTurmas/>}/>
+
+                {/* ➕ ROTA ADICIONAR ALUNO (Adicionada aqui!) */}
+                <Route path="/adicionar-aluno" element={<NovoAluno/>}/>
 
                 {/* 📝 ROTA DAS TAREFAS */}
                 <Route path="/tarefa" element={<NovaTarefa/>}/>

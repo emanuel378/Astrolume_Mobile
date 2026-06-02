@@ -48,8 +48,8 @@ export default function MinhasTurmas() {
           </div>
         ))}
 
-        {/* Botões de Ação Inferiores */}
-        <button className="btnAdicionar">
+        {/* 🔗 VÍNCULO CORRIGIDO: Botão leva para a tela de adicionar aluno */}
+        <button className="btnAdicionar" onClick={() => navigate("/adicionar-aluno")}>
           Adicionar Aluno
         </button>
 
@@ -60,11 +60,10 @@ export default function MinhasTurmas() {
 
       {/* 🧭 NAVBAR INFERIOR INTEGRADA */}
       <nav className="bottomNav">
-        {/* Leva de volta para o Painel Principal */}
         <Home onClick={() => navigate("/painel")} style={{ cursor: "pointer" }} />
         <BookOpen onClick={() => navigate("/tarefa")} style={{ cursor: "pointer" }} />
         <Bell style={{ cursor: "pointer" }} />
-        <User style={{ cursor: "pointer" }} />
+        <User onClick={() => navigate("/adicionar-aluno")} style={{ cursor: "pointer" }} />
         <Users className="ativo" onClick={() => navigate("/turmas")} style={{ cursor: "pointer" }} />
       </nav>
     </div>

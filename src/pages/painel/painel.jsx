@@ -50,7 +50,8 @@ export default function App() {
         <div className="cards">
           <div className="card" onClick={() => navigate("/turmas")} style={{ cursor: "pointer" }}><Users /><h1>3</h1><span>Turmas</span></div>
           <div className="card" onClick={() => navigate("/tarefa")} style={{ cursor: "pointer" }}><BookOpen /><h1>12</h1><span>Atividades</span></div>
-          <div className="card"><User /><h1>90</h1><span>Alunos</span></div>
+          {/* Clicar no card de Alunos também leva à tela de adicionar/gerenciar aluno */}
+          <div className="card" onClick={() => navigate("/adicionar-aluno")} style={{ cursor: "pointer" }}><User /><h1>90</h1><span>Alunos</span></div>
           <div className="card"><Star /><h1>100</h1><span>Estrelumes</span></div>
         </div>
 
@@ -84,7 +85,8 @@ export default function App() {
               <span>Nova Turma</span>
             </div>
 
-            <div className="acao" onClick={() => navigate("/turmas")} style={{ cursor: "pointer" }}>
+            {/* 🔗 VÍNCULO CORRIGIDO: Redireciona para adicionar aluno */}
+            <div className="acao" onClick={() => navigate("/adicionar-aluno")} style={{ cursor: "pointer" }}>
               <User />
               <span>Novo Aluno(a)</span>
             </div>
@@ -123,7 +125,7 @@ export default function App() {
         <Home className="ativo" onClick={() => navigate("/painel")} style={{ cursor: "pointer" }} />
         <BookOpen onClick={() => navigate("/tarefa")} style={{ cursor: "pointer" }} />
         <Bell style={{ cursor: "pointer" }} />
-        <User style={{ cursor: "pointer" }} />
+        <User onClick={() => navigate("/adicionar-aluno")} style={{ cursor: "pointer" }} />
         <Users onClick={() => navigate("/turmas")} style={{ cursor: "pointer" }} />
       </div>
     </div>
