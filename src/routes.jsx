@@ -15,6 +15,8 @@ import Questao5 from "./pages/Questao5";
 import Questao6 from "./pages/Questao6";
 import Questao7 from "./pages/Questao7";
 import Questao8 from "./pages/Questao8";
+import Questao9 from "./pages/Questao9";
+import Questao10 from "./pages/Questao10";
 
 export default function RoutesApp() {
   return (
@@ -36,6 +38,8 @@ export default function RoutesApp() {
         <Route path="/especial" element={<Questao6 />} />
         <Route path="/r7" element={<Questao7 />} />
         <Route path="/r8" element={<Questao8 />} />
+        <Route path="/r9" element={<Questao9 />} />
+        <Route path="/r10" element={<Questao10 />} />
       </Routes>
     </BrowserRouter>
   );

@@ -6,48 +6,47 @@ import "./questao8.css";
 export default function Questao8() {
   const navigate = useNavigate();
 
-  const [shipX, setShipX] = useState(320);
+  const ASTEROIDES_INICIAIS = [
+    { id: 1, numero: 1, x: 60, y: 80 },
+    { id: 2, numero: 2, x: 250, y: 120 },
+    { id: 3, numero: 3, x: 500, y: 90 },
+    { id: 4, numero: 4, x: 120, y: 320 },
+    { id: 5, numero: 5, x: 380, y: 250 },
+    { id: 6, numero: 6, x: 600, y: 320 },
+  ];
+
+  const [shipX, setShipX] = useState(330);
   const [shots, setShots] = useState([]);
-  const [selectedNumbers, setSelectedNumbers] = useState([]);
-  const [win, setWin] = useState(false);
-  const [vidas, setVidas] = useState(2);
-  const [gameOver, setGameOver] = useState(false);
+  const [asteroids, setAsteroids] = useState(ASTEROIDES_INICIAIS);
 
-  const gerarNumero = () => Math.floor(Math.random() * 6) + 1;
+  const [selecionados, setSelecionados] = useState([]);
+  const [tentativas, setTentativas] = useState(2);
 
-  function criarAsteroideAleatorio() {
-    return {
-      id: Date.now() + Math.random(),
-      number: gerarNumero(),
-      x: Math.random() * 600,
-      y: -50
-    };
+  const [mensagemErro, setMensagemErro] = useState("");
+  const [venceu, setVenceu] = useState(false);
+  const [perdeu, setPerdeu] = useState(false);
+
+  function reiniciarFase() {
+    setShipX(330);
+    setShots([]);
+    setAsteroids(ASTEROIDES_INICIAIS);
+    setSelecionados([]);
+    setMensagemErro("");
+    setTentativas(2);
+    setVenceu(false);
+    setPerdeu(false);
   }
 
-  function gerarAsteroides() {
-    return [
-      { id: 1, number: 1, x: 50, y: 40 },
-      { id: 2, number: 2, x: 220, y: 80 },
-      { id: 3, number: 3, x: 500, y: 60 },
-      { id: 4, number: 4, x: 120, y: 250 },
-      { id: 5, number: 5, x: 600, y: 200 },
-      { id: 6, number: 6, x: 350, y: 300 }
-    ];
-  }
-
-  const [asteroids, setAsteroids] = useState(gerarAsteroides());
-
-  // 🚀 Movimento da nave + tiros
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (win || gameOver) return;
+      if (venceu || perdeu) return;
 
       if (e.key === "ArrowLeft") {
         setShipX((prev) => Math.max(prev - 25, 0));
       }
 
       if (e.key === "ArrowRight") {
-        setShipX((prev) => Math.min(prev + 25, 640));
+        setShipX((prev) => Math.min(prev + 25, 660));
       }
 
       if (e.code === "Space") {
@@ -57,27 +56,30 @@ export default function Questao8() {
           ...prev,
           {
             id: Date.now(),
-            x: shipX + 25,
-            y: 520
-          }
+            x: shipX + 22,
+            y: 540,
+          },
         ]);
       }
     };
 
     document.addEventListener("keydown", handleKeyDown);
 
-    return () =>
-      document.removeEventListener("keydown", handleKeyDown);
-  }, [shipX, win, gameOver]);
+    return () => {
+      document.removeEventListener(
+        "keydown",
+        handleKeyDown
+      );
+    };
+  }, [shipX, venceu, perdeu]);
 
-  // 🚀 Movimento dos tiros
   useEffect(() => {
     const intervalo = setInterval(() => {
       setShots((prev) =>
         prev
           .map((shot) => ({
             ...shot,
-            y: shot.y - 10
+            y: shot.y - 10,
           }))
           .filter((shot) => shot.y > 0)
       );
@@ -86,33 +88,6 @@ export default function Questao8() {
     return () => clearInterval(intervalo);
   }, []);
 
-  // ☄️ Asteroides caindo
-  useEffect(() => {
-    const intervalo = setInterval(() => {
-      setAsteroids((prev) =>
-        prev.map((asteroid) => ({
-          ...asteroid,
-          y: asteroid.y + 2
-        }))
-      );
-    }, 30);
-
-    return () => clearInterval(intervalo);
-  }, []);
-
-  // 🌠 Spawn contínuo de asteroides
-  useEffect(() => {
-    const intervalo = setInterval(() => {
-      setAsteroids((prev) => {
-        if (prev.length >= 12) return prev;
-        return [...prev, criarAsteroideAleatorio()];
-      });
-    }, 1200);
-
-    return () => clearInterval(intervalo);
-  }, []);
-
-  // 💥 colisão
   useEffect(() => {
     shots.forEach((shot) => {
       asteroids.forEach((asteroid) => {
@@ -124,62 +99,89 @@ export default function Questao8() {
 
         if (hit) {
           setAsteroids((prev) =>
-            prev.filter((a) => a.id !== asteroid.id)
+            prev.filter(
+              (a) => a.id !== asteroid.id
+            )
           );
 
-          setSelectedNumbers((prev) => {
-            const updated = [...prev, asteroid.number];
+          setShots((prev) =>
+            prev.filter(
+              (s) => s.id !== shot.id
+            )
+          );
 
-            if (updated.length === 2) {
-              const soma = updated[0] + updated[1];
+          setSelecionados((prev) => {
+            const novos = [
+              ...prev,
+              asteroid.numero,
+            ];
+
+            if (novos.length === 2) {
+              const soma =
+                novos[0] + novos[1];
 
               if (soma === 5) {
-                setWin(true);
+                setVenceu(true);
               } else {
-                const novasVidas = vidas - 1;
-                setVidas(novasVidas);
+                const restantes =
+                  tentativas - 1;
 
-                if (novasVidas <= 0) {
-                  setGameOver(true);
+                setTentativas(restantes);
+
+                if (restantes <= 0) {
+                  setPerdeu(true);
                 }
 
+                setMensagemErro(
+                  `${novos[0]} + ${novos[1]} não é igual a 5`
+                );
+
                 setTimeout(() => {
-                  setSelectedNumbers([]);
-                  setAsteroids(gerarAsteroides());
-                }, 1000);
+                  if (!venceu) {
+                    setSelecionados([]);
+                    setAsteroids(
+                      ASTEROIDES_INICIAIS
+                    );
+                  }
+                }, 1200);
               }
             }
 
-            return updated;
+            return novos;
           });
         }
       });
     });
-  }, [shots, asteroids, vidas]);
-
-  function reiniciarJogo() {
-    setShipX(320);
-    setShots([]);
-    setSelectedNumbers([]);
-    setWin(false);
-    setGameOver(false);
-    setVidas(2);
-    setAsteroids(gerarAsteroides());
-  }
+  }, [shots, asteroids, tentativas, venceu]);
 
   return (
     <div className="game-container">
-      <h1>🚀 Missão Espacial</h1>
+      <h1>🚀 Missão dos Asteroides</h1>
 
       <h2>? + ? = 5</h2>
 
-      <p>Acerte dois asteroides cuja soma seja 5</p>
+      <p>
+        Acerte dois asteroides cuja soma
+        seja 5.
+      </p>
 
-      <p>❤️ Tentativas restantes: {vidas}</p>
+      <p>
+        ❤️ Tentativas restantes:
+        {" "}
+        {tentativas}
+      </p>
 
       <div className="selected">
-        Números escolhidos: {selectedNumbers.join(" + ")}
+        Escolhidos:
+        {" "}
+        {selecionados.join(" + ")}
       </div>
+
+      {mensagemErro && !venceu && !perdeu && (
+        <div className="erro-box">
+          {mensagemErro}
+        </div>
+      )}
 
       <div className="game-area">
         {asteroids.map((asteroid) => (
@@ -188,10 +190,10 @@ export default function Questao8() {
             className="asteroid"
             style={{
               left: asteroid.x,
-              top: asteroid.y
+              top: asteroid.y,
             }}
           >
-            {asteroid.number}
+            {asteroid.numero}
           </div>
         ))}
 
@@ -201,31 +203,49 @@ export default function Questao8() {
             className="shot"
             style={{
               left: shot.x,
-              top: shot.y
+              top: shot.y,
             }}
           />
         ))}
 
-        <div className="ship" style={{ left: shipX }}>
+        <div
+          className="ship"
+          style={{ left: shipX }}
+        >
           🚀
         </div>
       </div>
 
-      {win && (
+      {venceu && (
         <div className="result-box success">
-          <h2>✅ Missão Concluída!</h2>
+          <h2>
+            ✅ Muito bem!
+          </h2>
 
-          <button onClick={() => navigate("/questao9")}>
+          <p>
+            Você encontrou os números
+            corretos.
+          </p>
+
+          <button
+            onClick={() =>
+              navigate("/r9")
+            }
+          >
             Continuar
           </button>
         </div>
       )}
 
-      {gameOver && (
+      {perdeu && (
         <div className="result-box fail">
-          <h2>❌ Você perdeu!</h2>
+          <h2>
+            ❌ Missão Falhou
+          </h2>
 
-          <button onClick={reiniciarJogo}>
+          <button
+            onClick={reiniciarFase}
+          >
             Tentar Novamente
           </button>
         </div>

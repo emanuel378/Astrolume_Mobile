@@ -1,0 +1,88 @@
+.questao-container {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background: linear-gradient(
+    to bottom,
+    #081a3a,
+    #020816
+  );
+
+  color: white;
+}
+
+.astro-img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.questao-box {
+  background: rgba(255,255,255,0.08);
+
+  border: 2px solid rgba(255,255,255,0.2);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  width: 90%;
+  max-width: 500px;
+
+  text-align: center;
+
+  backdrop-filter: blur(8px);
+}
+
+.pergunta {
+  font-size: 2rem;
+  font-weight: bold;
+
+  margin: 25px 0;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.opcoes button,
+.resultado button {
+  padding: 12px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+.opcoes button:hover,
+.resultado button:hover {
+  transform: scale(1.05);
+}
+
+.resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.acerto h3 {
+  color: #4cff7a;
+}
+
+.erro h3 {
+  color: #ff6b6b;
+}
+

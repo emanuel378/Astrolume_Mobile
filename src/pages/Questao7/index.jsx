@@ -75,7 +75,7 @@ export default function Questao7() {
 
               <button
                 className="continuar-btn"
-                onClick={() => navigate("/questao8")}
+                onClick={() => navigate("/r8")}
               >
                 Continuar
               </button>

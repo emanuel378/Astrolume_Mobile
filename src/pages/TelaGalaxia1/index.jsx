@@ -23,7 +23,7 @@ export default function GalaxiaOrion() {
     { id: "player", type: "player" }, // nave / astro / historia em quadrinho
     { id: 7, type: "level", route: "/questao7" },
     { id: 8, type: "level", route: "/questao8" },
-    { id: 9, type: "level" },
+    { id: 9, type: "level", route: "/questao9" },
     { id: 10, type: "level" },
   ];
 

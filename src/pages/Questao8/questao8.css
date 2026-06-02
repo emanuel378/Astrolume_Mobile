@@ -5,7 +5,7 @@
 }
 
 .game-area {
-  width: 700px;
+  width: 750px;
   max-width: 95vw;
   height: 600px;
 
@@ -18,20 +18,22 @@
 
   overflow: hidden;
 
-  background: radial-gradient(circle at center, #0b2a5a, #050b1a);
+  background: radial-gradient(
+    circle at center,
+    #0b2a5a,
+    #050b1a
+  );
 }
 
-/* 🚀 nave */
 .ship {
   position: absolute;
   bottom: 20px;
 
   font-size: 50px;
 
-  transition: 0.05s linear;
+  transition: left 0.08s linear;
 }
 
-/* ☄️ asteroide */
 .asteroid {
   position: absolute;
 
@@ -40,7 +42,7 @@
 
   border-radius: 50%;
 
-  background: #666;
+  background: #6b6b6b;
 
   display: flex;
   justify-content: center;
@@ -51,37 +53,45 @@
 
   border: 2px solid white;
 
-  /* deixa mais “vivo” */
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  box-shadow: 0 0 12px rgba(255,255,255,.25);
 }
 
-/* 🔴 tiro */
 .shot {
   position: absolute;
 
-  width: 4px;
-  height: 18px;
+  width: 5px;
+  height: 20px;
 
   background: red;
 
-  border-radius: 2px;
+  border-radius: 3px;
 
-  box-shadow: 0 0 6px red;
+  box-shadow: 0 0 8px red;
 }
 
-/* números escolhidos */
 .selected {
   margin-top: 10px;
   font-size: 18px;
 }
 
-/* telas de resultado */
+.erro-box {
+  margin-top: 10px;
+
+  color: #ff8a8a;
+  font-weight: bold;
+}
+
 .result-box {
   margin-top: 20px;
 }
 
 .result-box button {
-  padding: 10px 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+
   cursor: pointer;
+
   font-size: 16px;
+  font-weight: bold;
 }

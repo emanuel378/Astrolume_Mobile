@@ -1,0 +1,145 @@
+.questao10-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #081a3a,
+    #020816
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 20px;
+  color: white;
+}
+
+.astro-img {
+  width: 180px;
+
+  display: block;
+
+  margin: 0 auto 20px auto;
+}
+
+.questao-box,
+.final-box {
+  width: 90%;
+  max-width: 600px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 2px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.25);
+}
+
+.questao-box h2,
+.questao-box h3,
+.questao-box p,
+.final-box h1,
+.final-box p,
+.contador {
+  width: 100%;
+  text-align: center;
+}
+
+.questao-box h2 {
+  margin-bottom: 10px;
+}
+
+.contador {
+  color: #00bfff;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.questao-box h3 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+
+  margin-bottom: 25px;
+}
+
+.opcoes {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.opcoes button {
+  width: 100%;
+  max-width: 350px;
+}
+
+.opcoes button,
+.resultado button,
+.final-box button {
+  padding: 12px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+.opcoes button:hover,
+.resultado button:hover,
+.final-box button:hover {
+  transform: scale(1.05);
+}
+
+.resultado {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.acerto h3 {
+  color: #4cff7a;
+}
+
+.erro h3 {
+  color: #ff6b6b;
+}
+
+.final-box h1 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.final-box p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
