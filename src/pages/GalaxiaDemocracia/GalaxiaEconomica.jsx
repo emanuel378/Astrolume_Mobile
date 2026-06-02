@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 // assets
 import orionTerra1 from '../../assets/orionterra1.png';
-import terra2 from '../../assets/terra2.png';
 import terra3 from '../../assets/terra3.png';
 
 export default function GalaxiaEconomica() {
@@ -18,8 +17,8 @@ export default function GalaxiaEconomica() {
         <div className="galaxia-card">
 
           <div className="galaxia-header">
-            <h2 className="galaxia-titulo">Galáxia</h2>
-            <h2 className="galaxia-nome">Commercium</h2>
+            <h2 className="galaxia-titulo">Galáxia do</h2>
+            <h2 className="galaxia-nome">Debate</h2>
             <div className="linha"></div>
           </div>
 
@@ -31,9 +30,7 @@ export default function GalaxiaEconomica() {
             <Link to="/galaxias">
               <img src={orionTerra1} alt="Ícone Tech" />
             </Link>
-           <Link to="/galaxiasaude">
-              <img src={terra2} alt="Ícone Tech" />
-            </Link>
+
             <img src={terra3} alt="Ícone Economia" />
           </div>
 
@@ -48,8 +45,8 @@ export default function GalaxiaEconomica() {
             O Império dos Negócios
           </h3>
           <p>
-           Mentes <strong>empreendedoras</strong> e <strong>inovadoras</strong> que desejam criar negócios, 
-           <strong>gerir recursos</strong> e desenvolver soluções para o mercado.
+            Mentes <strong>empreendedoras</strong> e <strong>inovadoras</strong> que desejam criar negócios,
+            <strong> gerir recursos</strong> e desenvolver soluções para o mercado.
           </p>
         </div>
 
