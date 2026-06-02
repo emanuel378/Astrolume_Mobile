@@ -1,5 +1,5 @@
-import "./painel.css"; // 👈 Ligando o CSS da forma certa
-import { useNavigate } from "react-router-dom"; // 👈 Importando o gerenciador de rotas
+import "./painel.css"; 
+import { useNavigate } from "react-router-dom"; 
 import {
   Home,
   Bell,
@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 export default function App() {
-  const navigate = useNavigate(); // 👈 Ativando o hook de navegação
+  const navigate = useNavigate(); 
 
   const turmas = [
     { nome: "Turma A", alunos: 31 },
@@ -23,17 +23,11 @@ export default function App() {
     { titulo: "Missão Estelar", desc: "Criado em 13/12/2025" },
   ];
 
-  // 🚪 Função que lida com o logout com confirmação
   const handleLogout = () => {
     const desejaSair = window.confirm("Você realmente deseja sair da conta?");
-    
     if (desejaSair) {
-      // Se você tiver tokens ou dados de login no localStorage, limpe-os aqui:
-      // localStorage.removeItem("token"); 
-      
-      navigate("/"); // 👈 Redireciona para a página inicial/login
+      navigate("/"); 
     }
-    // Se clicar em 'Cancelar', não faz nada e continua na tela do painel
   };
 
   return (
@@ -41,7 +35,6 @@ export default function App() {
       <div className="dashboard">
         {/* HEADER */}
         <div className="header">
-          {/* Foto de perfil anônima com o estilo do app */}
           <img 
             src="https://cdn-icons-png.flaticon.com/512/149/149071.png" 
             alt="Avatar Anônimo" 
@@ -55,8 +48,8 @@ export default function App() {
 
         {/* CARDS */}
         <div className="cards">
-          <div className="card"><Users /><h1>3</h1><span>Turmas</span></div>
-          <div className="card"><BookOpen /><h1>12</h1><span>Atividades</span></div>
+          <div className="card" onClick={() => navigate("/turmas")} style={{ cursor: "pointer" }}><Users /><h1>3</h1><span>Turmas</span></div>
+          <div className="card" onClick={() => navigate("/tarefa")} style={{ cursor: "pointer" }}><BookOpen /><h1>12</h1><span>Atividades</span></div>
           <div className="card"><User /><h1>90</h1><span>Alunos</span></div>
           <div className="card"><Star /><h1>100</h1><span>Estrelumes</span></div>
         </div>
@@ -86,9 +79,20 @@ export default function App() {
         <div>
           <h2 className="titulo">O que vamos fazer hoje?</h2>
           <div className="acoes">
-            <div className="acao"><Users /><span>Nova Turma</span></div>
-            <div className="acao"><User /><span>Novo Aluno(a)</span></div>
-            <div className="acao grande"><BookOpen /><span>Nova Atividade</span></div>
+            <div className="acao" onClick={() => navigate("/turmas")} style={{ cursor: "pointer" }}>
+              <Users />
+              <span>Nova Turma</span>
+            </div>
+
+            <div className="acao" onClick={() => navigate("/turmas")} style={{ cursor: "pointer" }}>
+              <User />
+              <span>Novo Aluno(a)</span>
+            </div>
+
+            <div className="acao grande" onClick={() => navigate("/tarefa")} style={{ cursor: "pointer" }}>
+              <BookOpen />
+              <span>Nova Atividade</span>
+            </div>
           </div>
         </div>
 
@@ -96,7 +100,7 @@ export default function App() {
         <div>
           <h2 className="titulo">Suas Atividades</h2>
           {atividades.map((atividade, index) => (
-            <div className="atividade" key={index}>
+            <div className="atividade" key={index} onClick={() => navigate("/tarefa")} style={{ cursor: "pointer" }}>
               <div className="atividade-esquerda">
                 <Star />
                 <div>
@@ -109,19 +113,18 @@ export default function App() {
           ))}
         </div>
 
-        {/* 🚪 BOTÃO DE SAIR CONFIGURADO */}
         <button className="btn-sair" onClick={handleLogout}>
           Sair da conta
         </button>
       </div>
 
-      {/* NAVBAR */}
+      {/* 🧭 NAVBAR INFERIOR DO PAINEL */}
       <div className="navbar">
-        <Home />
-        <BookOpen />
-        <Bell />
-        <User />
-        <Users className="ativo" />
+        <Home className="ativo" onClick={() => navigate("/painel")} style={{ cursor: "pointer" }} />
+        <BookOpen onClick={() => navigate("/tarefa")} style={{ cursor: "pointer" }} />
+        <Bell style={{ cursor: "pointer" }} />
+        <User style={{ cursor: "pointer" }} />
+        <Users onClick={() => navigate("/turmas")} style={{ cursor: "pointer" }} />
       </div>
     </div>
   );
