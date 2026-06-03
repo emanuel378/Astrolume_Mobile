@@ -1,0 +1,154 @@
+.democria3-container {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #08204d,
+      #020816
+    );
+
+  color: white;
+}
+
+.astro-img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.democria3-box {
+  width: 100%;
+  max-width: 750px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 2px solid rgba(0,212,255,0.3);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  backdrop-filter: blur(6px);
+}
+
+.democria3-box h1 {
+  color: #00d4ff;
+  margin-bottom: 15px;
+}
+
+.descricao {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.votos-box {
+  background: rgba(255,255,255,0.05);
+
+  border-radius: 15px;
+
+  padding: 20px;
+
+  margin-bottom: 25px;
+}
+
+.voto-item {
+  margin: 12px 0;
+  font-size: 1.1rem;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.opcoes button {
+  padding: 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2f47ff,
+      #1a5aff
+    );
+
+  transition: 0.2s;
+}
+
+.opcoes button:hover {
+  transform: scale(1.03);
+}
+
+.resultado {
+  margin-top: 25px;
+}
+
+.resultado h2 {
+  margin-bottom: 15px;
+}
+
+.resultado p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.resultado button {
+  margin-top: 10px;
+
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  background: #00d4ff;
+  color: #001233;
+}
+
+.sucesso h2 {
+  color: #5cff72;
+}
+
+.erro h2 {
+  color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+
+  .astro-img {
+    width: 140px;
+  }
+
+  .democria3-box {
+    padding: 20px;
+  }
+
+  .voto-item {
+    font-size: 1rem;
+  }
+}

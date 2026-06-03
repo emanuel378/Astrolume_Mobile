@@ -41,9 +41,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  text-align: center;
 
   backdrop-filter: blur(10px);
 
@@ -56,7 +53,6 @@
 .final-box h1,
 .final-box p,
 .contador {
-  width: 100%;
   text-align: center;
 }
 
@@ -67,14 +63,16 @@
 .contador {
   color: #00bfff;
   font-weight: bold;
+
   margin-bottom: 20px;
 }
 
 .questao-box h3 {
   font-size: 1.5rem;
-  line-height: 1.5;
 
   margin-bottom: 25px;
+
+  line-height: 1.5;
 }
 
 .opcoes {
@@ -96,7 +94,7 @@
 .opcoes button,
 .resultado button,
 .final-box button {
-  padding: 12px;
+  padding: 12px 20px;
 
   border: none;
   border-radius: 12px;
@@ -136,10 +134,49 @@
 
 .final-box h1 {
   color: gold;
+
   margin-bottom: 20px;
 }
 
 .final-box p {
   line-height: 1.6;
+
   margin-bottom: 12px;
+}
+
+/* BOTÕES FINAIS */
+
+.final-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+
+  width: 100%;
+
+  margin-top: 20px;
+}
+
+.final-buttons button {
+  width: 220px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 600px) {
+  .astro-img {
+    width: 140px;
+  }
+
+  .questao-box,
+  .final-box {
+    padding: 20px;
+  }
+
+  .questao-box h3 {
+    font-size: 1.2rem;
+  }
 }

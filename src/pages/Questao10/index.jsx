@@ -175,6 +175,13 @@ export default function Questao10() {
           >
             Voltar para Galáxias
           </button>
+
+             <button
+    onClick={() => navigate("/galaxiademocria")}
+  >
+    🌎 Viajar para Democria
+  </button>
+
         </div>
       </div>
     );

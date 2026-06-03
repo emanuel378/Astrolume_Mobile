@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.democria-container {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #08204d 0%,
+      #05122d 40%,
+      #020816 100%
+    );
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 20px;
+}
+
+.header-democria {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-democria h1 {
+  font-size: 3rem;
+  color: #00d4ff;
+
+  text-shadow:
+    0 0 10px rgba(0,212,255,0.9),
+    0 0 20px rgba(0,212,255,0.7),
+    0 0 40px rgba(0,212,255,0.4);
+}
+
+.header-democria p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #d8f7ff;
+}
+
+/* ===== Cidade ===== */
+
+.cidade {
+  width: 100%;
+  max-width: 900px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  grid-template-areas:
+    ". assembleia ."
+    "escola praca votacao"
+    "cooperacao praca direitos"
+    ". checkpoint .";
+
+  gap: 30px;
+
+  justify-items: center;
+  align-items: center;
+}
+
+.assembleia {
+  grid-area: assembleia;
+}
+
+.escola {
+  grid-area: escola;
+}
+
+.votacao {
+  grid-area: votacao;
+}
+
+.cooperacao {
+  grid-area: cooperacao;
+}
+
+.direitos {
+  grid-area: direitos;
+}
+
+.checkpoint {
+  grid-area: checkpoint;
+}
+
+/* ===== Prédios ===== */
+
+.predio,
+.checkpoint {
+  width: 150px;
+  height: 150px;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  transition: 0.25s;
+
+  border: 2px solid rgba(0,212,255,0.25);
+
+  background:
+    linear-gradient(
+      145deg,
+      #2f47ff,
+      #1a5aff
+    );
+
+  box-shadow:
+    0 0 15px rgba(26,90,255,0.7),
+    0 0 30px rgba(26,90,255,0.3);
+}
+
+.predio:hover,
+.checkpoint:hover {
+  transform: translateY(-8px) scale(1.05);
+
+  box-shadow:
+    0 0 25px rgba(0,212,255,0.9),
+    0 0 50px rgba(0,212,255,0.4);
+}
+
+.icone {
+  font-size: 3.3rem;
+}
+
+.predio span:last-child,
+.checkpoint span:last-child {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+/* ===== Praça Central ===== */
+
+.praca-central {
+  grid-area: praca;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #00d4ff,
+      #1a5aff
+    );
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border: 4px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 0 35px rgba(0,212,255,0.8),
+    0 0 70px rgba(0,212,255,0.4);
+
+  animation: pulsarPraca 3s infinite ease-in-out;
+}
+
+.globo {
+  font-size: 5rem;
+}
+
+.praca-central h2 {
+  margin-top: 10px;
+
+  color: white;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.7);
+
+  font-size: 1.2rem;
+}
+
+/* ===== Checkpoint Especial ===== */
+
+.checkpoint {
+  background:
+    linear-gradient(
+      145deg,
+      #ffd84d,
+      #ffae00
+    );
+
+  border: 2px solid rgba(255,255,255,0.3);
+
+  box-shadow:
+    0 0 20px gold,
+    0 0 40px rgba(255,215,0,0.5);
+}
+
+.checkpoint:hover {
+  box-shadow:
+    0 0 30px gold,
+    0 0 60px rgba(255,215,0,0.8);
+}
+
+/* ===== Animações ===== */
+
+@keyframes pulsarPraca {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 768px) {
+
+  .header-democria h1 {
+    font-size: 2.2rem;
+  }
+
+  .cidade {
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "praca"
+      "assembleia"
+      "escola"
+      "votacao"
+      "cooperacao"
+      "direitos"
+      "checkpoint";
+  }
+
+  .praca-central {
+    width: 230px;
+    height: 230px;
+  }
+
+  .globo {
+    font-size: 4rem;
+  }
+
+  .predio,
+  .checkpoint {
+    width: 130px;
+    height: 130px;
+  }
+}
