@@ -19,12 +19,11 @@ export default function Chat() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  
-  
+  // ✅ CORRIGIDO: Usando a variável de ambiente correta
   const groq = new Groq({ 
-  apiKey: import.meta.env.VITE_GEMINI_API_KEY,
-  dangerouslyAllowBrowser: true 
-});
+    apiKey: import.meta.env.VITE_GROQ_API_KEY,
+    dangerouslyAllowBrowser: true 
+  });
 
   const sendMessage = async () => {
     if (!input.trim()) return;

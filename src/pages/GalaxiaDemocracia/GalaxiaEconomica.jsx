@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // assets
 import orionTerra1 from '../../assets/orionterra1.png';
 import terra3 from '../../assets/terra3.png';
+import demo1 from "../../assets/demo1.png"
 
 export default function GalaxiaEconomica() {
   return (
@@ -17,21 +18,21 @@ export default function GalaxiaEconomica() {
         <div className="galaxia-card">
 
           <div className="galaxia-header">
-            <h2 className="galaxia-titulo">Galáxia do</h2>
-            <h2 className="galaxia-nome">Debate</h2>
+            <h2 className="galaxia-titulo">Galáxia da</h2>
+            <h2 className="galaxia-nome">Democracia</h2>
             <div className="linha"></div>
           </div>
 
           <div className="galaxia-visual">
-            <img src={terra3} alt="Planeta Econômico" className="planeta" />
+            <img src={demo1} alt="Planeta Democracia" className="planeta" />
           </div>
 
           <div className="galaxia-icons">
             <Link to="/galaxias">
-              <img src={orionTerra1} alt="Ícone Tech" />
+              <img src={orionTerra1} alt="Voltar" />
             </Link>
 
-            <img src={terra3} alt="Ícone Economia" />
+            <img src={demo1} alt="Galáxia da Democracia" />
           </div>
 
           <button className="btn-escolher">
@@ -42,11 +43,17 @@ export default function GalaxiaEconomica() {
 
         <div className="galaxia-info">
           <h3>
-            O Império dos Negócios
+            O Conselho Galáctico
           </h3>
+
           <p>
-            Mentes <strong>empreendedoras</strong> e <strong>inovadoras</strong> que desejam criar negócios,
-            <strong> gerir recursos</strong> e desenvolver soluções para o mercado.
+            Um universo dedicado a jovens que desejam desenvolver o
+            <strong> pensamento crítico</strong>, a
+            <strong> argumentação</strong> e a
+            <strong> comunicação</strong>.
+            Aqui, os exploradores enfrentam desafios de cidadania,
+            aprendendo a defender ideias, respeitar opiniões e construir
+            soluções para uma sociedade mais justa e democrática.
           </p>
         </div>
 

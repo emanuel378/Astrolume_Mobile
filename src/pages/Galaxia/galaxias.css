@@ -55,11 +55,10 @@
 }
 
 .planeta {
-  width: 210px;
+  width: 320px;
   max-width: 100%;
   animation: flutuar 4s ease-in-out infinite;
 }
-
 /* ANIMAÇÃO */
 @keyframes flutuar {
   0%, 100% { transform: translateY(0); }

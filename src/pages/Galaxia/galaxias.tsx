@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 // assets
 import orionTerra1 from '../../assets/orionterra1.png';
 import terra3 from '../../assets/terra3.png';
+import demo1 from "../../assets/demo1.png"
+
 
 export default function Galaxias() {
   return (
@@ -33,7 +35,7 @@ export default function Galaxias() {
             <img src={orionTerra1} alt="Ícone 1" />
 
             <Link to="/galaxieconomica">
-              <img src={terra3} alt="Galáxia Econômica" />
+              <img src={demo1} alt="Galáxia Econômica" />
             </Link>
           </div>
 

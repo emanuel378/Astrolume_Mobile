@@ -1,6 +1,5 @@
 /* ================================
-   GALÁXIA ECONÔMICA — ECON 💜
-   Cor principal: #B64FFF
+   GALÁXIA DEMOCRÁTICA — DOURADO ✨
 ================================ */
 
 /* CONTAINER PRINCIPAL */
@@ -23,10 +22,13 @@
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(182, 79, 255, 0.7);
+
+  border: 1px solid rgba(255, 215, 0, 0.7);
+
   box-shadow:
-    0 0 30px rgba(182, 79, 255, 0.25),
+    0 0 30px rgba(255, 215, 0, 0.25),
     inset 0 0 15px rgba(255, 255, 255, 0.05);
+
   text-align: center;
 }
 
@@ -43,13 +45,15 @@
 }
 
 .galaxias-economica .galaxia-nome {
-  font-family: 'Gugi', cursive;
+  font-family: "Gugi", cursive;
   font-size: 2.8rem;
-  color: #B64FFF;
+  color: #FFD700;
   letter-spacing: 2px;
+
   text-shadow:
-    0 0 10px rgba(182, 79, 255, 0.7),
-    0 0 25px rgba(182, 79, 255, 0.45);
+    0 0 10px rgba(255, 215, 0, 0.9),
+    0 0 25px rgba(255, 193, 7, 0.6),
+    0 0 40px rgba(255, 223, 0, 0.4);
 }
 
 /* PLANETA */
@@ -60,15 +64,25 @@
 }
 
 .galaxias-economica .planeta {
-  width: 210px;
+  width: 290px;
   max-width: 100%;
+
   animation: flutuar 4s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 20px rgba(255, 215, 0, 0.8))
+    drop-shadow(0 0 50px rgba(255, 193, 7, 0.6));
 }
 
 /* ANIMAÇÃO */
 @keyframes flutuar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* ÍCONES */
@@ -81,7 +95,7 @@
 
 .galaxias-economica .galaxia-icons img {
   width: 64px;
-  height: 64px;
+  height: 60px;
   padding: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
@@ -91,73 +105,97 @@
 
 .galaxias-economica .galaxia-icons img:hover {
   transform: scale(1.2) rotate(3deg);
-  filter: drop-shadow(0 0 15px rgba(182, 79, 255, 0.9));
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
 }
 
 /* BOTÃO */
 .galaxias-economica .btn-escolher {
   margin-top: 1.2rem;
   padding: 14px 38px;
-  font-family: 'Gugi', cursive;
+
+  font-family: "Gugi", cursive;
   font-size: 1.1rem;
+
   border: none;
   border-radius: 50px;
   cursor: pointer;
+
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #ffffff;
-  background: linear-gradient(135deg, #B64FFF 0%, #8A2BE2 100%);
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #FFD700 0%,
+    #FFC107 40%,
+    #FFB300 70%,
+    #FF8F00 100%
+  );
+
   box-shadow:
-    0 8px 25px rgba(182, 79, 255, 0.55),
-    0 0 15px rgba(182, 79, 255, 0.8),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 8px 25px rgba(255, 193, 7, 0.55),
+    0 0 20px rgba(255, 215, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
   transition: all 0.3s ease;
 }
 
 .galaxias-economica .btn-escolher:hover {
   transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(255, 193, 7, 0.7),
+    0 0 30px rgba(255, 215, 0, 1);
 }
 
 /* CARD INFERIOR */
 .galaxias-economica .galaxia-info {
   width: 100%;
   max-width: 380px;
+
   padding: 1.5rem;
   border-radius: 20px;
+
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(182, 79, 255, 0.7);
+
+  border: 1px solid rgba(255, 215, 0, 0.7);
+
   text-align: center;
 }
 
 .galaxias-economica .galaxia-info h3,
 .galaxias-economica .galaxia-info h3 span {
-  font-family: 'Gugi', cursive;
+  font-family: "Gugi", cursive;
   font-size: 1.5rem;
-  color: #B64FFF;
+
+  color: #FFD700;
+
   text-shadow:
-    0 0 10px rgba(182, 79, 255, 0.7),
-    0 0 25px rgba(182, 79, 255, 0.45);
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 25px rgba(255, 193, 7, 0.5);
 }
 
 .galaxias-economica .galaxia-info p {
   font-family: "Poppins", sans-serif;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.85);
+
   margin-top: 0.6rem;
 }
 
 .galaxias-economica .galaxia-info p strong {
-  color: #B64FFF;
+  color: #FFD700;
 }
 
 /* RESPONSIVO */
 @media (max-width: 480px) {
   .galaxias-economica .planeta {
-    width: 180px;
+    width: 260px;
   }
 
   .galaxias-economica .galaxia-icons img {
     width: 56px;
+    height: 56px;
   }
 
   .galaxias-economica .galaxia-nome {
