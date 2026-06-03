@@ -1,0 +1,42 @@
+.democria1-container {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #050816;
+
+  padding: 20px;
+}
+
+.hq-img {
+  max-width: 95%;
+  max-height: 80vh;
+
+  border-radius: 15px;
+
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.botoes {
+  margin-top: 20px;
+
+  display: flex;
+  gap: 15px;
+}
+
+.botoes button {
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  background: #00d4ff;
+  color: #001233;
+}

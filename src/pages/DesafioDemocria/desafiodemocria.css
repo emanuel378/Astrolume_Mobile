@@ -1,0 +1,69 @@
+.desafio-container {
+  min-height: 100vh;
+  background: radial-gradient(circle, #071833, #020816);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  padding: 20px;
+}
+
+.astro-img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.questao-box,
+.final-box {
+  width: 100%;
+  max-width: 800px;
+
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  text-align: center;
+}
+
+.contador {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.opcoes button,
+.resultado button,
+.final-box button {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  background: #00d4ff;
+  color: #001233;
+}
+
+.resultado {
+  margin-top: 20px;
+}
+
+.final-box button {
+  margin: 10px;
+}

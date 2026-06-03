@@ -18,11 +18,12 @@ import Questao8 from "./pages/Questao8";
 import Questao9 from "./pages/Questao9";
 import Questao10 from "./pages/Questao10";
 import GalaxiaDemocria from "./pages/GalaxiaDemocria";
+import Democria1 from "./pages/Democria1";
 import Democria2 from "./pages/Democria2";
 import Democria3 from "./pages/Democria3";
 import Democria4 from "./pages/Democria4";
 import Democria5 from "./pages/Democria5";
-
+import DesafioDemocria from "./pages/DesafioDemocria";
 
 export default function RoutesApp() {
   return (
@@ -50,10 +51,15 @@ export default function RoutesApp() {
   path="/galaxiademocria"
   element={<GalaxiaDemocria />}
 />
+<Route path="/democria1" element={<Democria1 />} />
 <Route path="/democria2" element={<Democria2 />} />
 <Route path="/democria3" element={<Democria3 />} />
 <Route path="/democria4" element={<Democria4 />} />
 <Route path="/democria5" element={<Democria5 />} />
+<Route
+  path="/desafiodemocria"
+  element={<DesafioDemocria />}
+/>
       </Routes>
     </BrowserRouter>
   );
