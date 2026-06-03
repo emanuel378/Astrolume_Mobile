@@ -8,6 +8,7 @@ import GalaxiaEconomica from "./pages/GalaxiaEconomica/GalaxiaEconomica";
 import GalaxiaOrion from "./pages/TelaGalaxia1";
 import Historia from "./pages/Historia";
 import Resumo1 from "./pages/Resumos/r1/resumo";
+<<<<<<< HEAD
 import Questao2 from "./pages/Questao2";
 import Questao3 from "./pages/Questao3";
 import Questao4 from "./pages/Questao4";
@@ -24,10 +25,14 @@ import Democria3 from "./pages/Democria3";
 import Democria4 from "./pages/Democria4";
 import Democria5 from "./pages/Democria5";
 import DesafioDemocria from "./pages/DesafioDemocria";
+=======
+import Chat from "./pages/Chat/chat";
+>>>>>>> origin/Emanuel
 
 export default function RoutesApp() {
   return (
     <BrowserRouter>
+<<<<<<< HEAD
       <Routes>
         <Route path="/" element={<Inicial />} />
         <Route path="/cadastro" element={<Cadastro />} />
@@ -61,6 +66,21 @@ export default function RoutesApp() {
   element={<DesafioDemocria />}
 />
       </Routes>
+=======
+    <Routes>
+
+        <Route path="/" element={<Inicial/>}/>
+        <Route path="/cadastro" element={<Cadastro/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/galaxias" element={<Galaxias/>}/>
+        <Route path="/galaxiasaude" element={<GalaxiaSaude/>}/>
+        <Route path="/galaxieconomica" element={<GalaxiaEconomica/>}/>
+        <Route path="/galaxinicial" element={<GalaxiaOrion/>}/>
+        <Route path="/historia" element={<Historia/>}/>
+        <Route path="/r1" element={<Resumo1/>}/>
+        <Route path="/chat" element={<Chat/>}></Route>
+    </Routes>
+>>>>>>> origin/Emanuel
     </BrowserRouter>
   );
 }

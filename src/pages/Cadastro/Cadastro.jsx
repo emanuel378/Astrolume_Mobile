@@ -2,9 +2,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import { auth, db } from '../../firebase/firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { auth } from '../../firebase/firebase';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 import FundoEstrelado from '../../componets/FundoEstrelado/FundoEstrelado';
 import './cadastro.css';
@@ -22,21 +21,7 @@ export default function Cadastro() {
     setLoading(true);
 
     try {
-      // 🔐 Cria usuário no Firebase Auth
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        senha
-      );
-
-      const user = userCredential.user;
-
-      // 🗂️ Salva dados extras no Firestore
-      await setDoc(doc(db, 'usuarios', user.uid), {
-        nome: usuario,
-        email: email,
-        criadoEm: new Date()
-      });
+      await createUserWithEmailAndPassword(auth, email, senha);
 
       alert('Cadastro realizado com sucesso!');
       navigate('/galaxias');
@@ -53,6 +38,23 @@ export default function Cadastro() {
       }
 
       alert(mensagem);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleGoogleCadastro() {
+    setLoading(true);
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      alert('Cadastro realizado com sucesso!');
+      navigate('/galaxias');
+    } catch (error) {
+      console.error(error);
+      if (error.code !== 'auth/popup-closed-by-user') {
+        alert('Erro ao cadastrar com Google');
+      }
     } finally {
       setLoading(false);
     }
@@ -117,8 +119,8 @@ export default function Cadastro() {
         </div>
 
         <div className="botoes-sociais">
-          <button className="btn-social google">Google</button>
-          <button className="btn-social facebook">Facebook</button>
+          <button className="btn-social google" type="button" onClick={handleGoogleCadastro} disabled={loading}>Google</button>
+
         </div>
 
         <div className="links-navegacao">
