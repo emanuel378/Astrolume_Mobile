@@ -1,0 +1,158 @@
+/* CONTAINER GERAL */
+.galaxias-container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* CARD PRINCIPAL */
+.galaxia-card {
+  width: 100%;
+  max-width: 380px;
+  background: rgba(10, 15, 40, 0.85);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  box-shadow:
+    0 0 25px rgba(0, 191, 255, 0.25),
+    inset 0 0 15px rgba(0, 191, 255, 0.15);
+  text-align: center;
+}
+
+/* TÍTULOS */
+.galaxia-titulo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  text-shadow:
+    0 0 5px rgba(0, 191, 255, 0.3),
+    0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+.galaxia-nome {
+  font-family: "Gugi", cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #00D4FF;
+  margin: 0.3rem 0 1rem;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px rgba(0, 191, 255, 0.6),
+    0 0 20px rgba(0, 191, 255, 0.4);
+}
+
+.linha {
+  width: 60%;
+  height: 1px;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ÁREA VISUAL */
+.galaxia-visual {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planeta {
+  width: 140px;
+  z-index: 1;
+}
+
+.orbita {
+  position: absolute;
+  width: 190px;
+  opacity: 0.7;
+}
+
+.astronauta {
+  position: absolute;
+  width: 70px;
+  bottom: 10px;
+  right: 25%;
+  animation: flutuar 3s ease-in-out infinite;
+}
+
+/* ANIMAÇÃO */
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ÍCONES */
+.galaxia-icons {
+  display: flex;
+  justify-content: space-around;
+  margin: 1.5rem 0;
+}
+
+.galaxia-icons img {
+  width: 42px;
+}
+
+/* BOTÃO – MESMO DO CADASTRO */
+.btn-escolher {
+  padding: 16px 40px;
+  font-family: 'Gugi', cursive;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  min-width: 180px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  background: linear-gradient(135deg, #0066CC 0%, #00BFFF 100%);
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(0, 102, 204, 0.4),
+    0 0 15px rgba(0, 191, 255, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  transition: all 0.3s ease;
+}
+
+.btn-escolher:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 15px 30px rgba(0, 102, 204, 0.6),
+    0 0 20px rgba(0, 191, 255, 0.8);
+}
+
+/* CARD INFERIOR */
+.galaxia-info {
+  max-width: 380px;
+  background: rgba(10, 15, 40, 0.85);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.25);
+}
+
+.galaxia-info h3 {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.galaxia-info span {
+  color: #00D4FF;
+  font-weight: 600;
+}
+
+.galaxia-info p {
+  font-family: "Poppins", sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+}
